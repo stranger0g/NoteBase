@@ -9,29 +9,21 @@ async function generateQuiz() {
     const submitBtn = document.getElementById('submitQuizBtn');
     const feedbackContainer = document.getElementById('quizFeedback');
     const quizLoading = document.getElementById('quizLoading');
-    const apiKeyWarning = document.getElementById('apiKeyWarning'); // Get warning div
+    const apiKeyWarning = document.getElementById('apiKeyWarning'); // Still select it to hide it
 
-    // Identify the current chapter (using a data attribute on the button)
+    // Hide the old API key warning permanently now
+    if(apiKeyWarning) apiKeyWarning.classList.add('hidden');
+
+    // Identify the current chapter
     const chapterId = generateBtn ? generateBtn.getAttribute('data-chapter-id') : null;
-
     if (!chapterId || !quizPrompts[chapterId]) {
         quizContainer.innerHTML = `<p class="error">Error: Could not identify chapter or find prompt for Chapter ${chapterId}.</p>`;
         return;
     }
 
-    // Check API Key and show warning if necessary
-    if (typeof GEMINI_API_KEY === 'undefined' || GEMINI_API_KEY === 'YOUR_API_KEY') {
-         if(apiKeyWarning) apiKeyWarning.classList.remove('hidden');
-         if(generateBtn) {
-            generateBtn.disabled = true;
-            generateBtn.title = 'API Key not set in js/common.js';
-         }
-        return; // Stop execution
-    } else {
-         if(apiKeyWarning) apiKeyWarning.classList.add('hidden'); // Hide warning if key is present
-    }
-
+    // --- Start Quiz Generation ---
     generateBtn.disabled = true;
+    generateBtn.title = ""; // Clear any previous error title
     quizLoading.classList.remove('hidden');
     quizContainer.innerHTML = '<p>Generating questions...</p>';
     feedbackContainer.classList.add('hidden');
@@ -41,12 +33,18 @@ async function generateQuiz() {
     const prompt = quizPrompts[chapterId]; // Get the correct prompt
 
     try {
+        // Call the (modified) callGeminiAPI which now uses the Edge Function URL
+        // It expects the prompt text directly
         const quizJson = await callGeminiAPI(prompt); // Function from common.js
 
-        // Validate the response structure
+        // Validate the response structure (ensure it's the expected array from the Edge Func)
         if (!Array.isArray(quizJson) || quizJson.length === 0 || !quizJson.every(q => typeof q.question === 'string' && typeof q.answer_guideline === 'string')) {
-            console.error("Invalid JSON structure received:", quizJson);
-            throw new Error("AI response was not the expected JSON array format.");
+            console.error("Invalid JSON structure received from backend:", quizJson);
+            // Check if it's an error object returned by the edge function explicitly
+            if (quizJson && quizJson.error) {
+                throw new Error(quizJson.error); // Throw the specific error from the backend
+            }
+            throw new Error("AI response from backend was not the expected JSON array format.");
         }
 
         generatedQuizData = quizJson;
@@ -67,10 +65,12 @@ async function generateQuiz() {
             MathJax.typesetPromise([quizContainer]).catch(console.error);
         }
         submitBtn.classList.remove('hidden');
-        // Keep generate button hidden until feedback is shown or reset happens
+        // Keep generate button disabled until feedback is shown or reset happens
+
     } catch (error) {
         console.error("Error generating quiz:", error);
-        quizContainer.innerHTML = `<p class="error">Quiz generation failed: ${error.message}. Check API key and console.</p>`;
+        // Display the error more informatively
+        quizContainer.innerHTML = `<p class="error">Quiz generation failed: ${error.message}. Check the browser console and Supabase function logs for details.</p>`;
         generateBtn.disabled = false; // Re-enable button on failure
     } finally {
         quizLoading.classList.add('hidden');
@@ -98,7 +98,7 @@ async function submitQuiz() {
     const answersToMark = [];
     let allAnswersSubmitted = true;
     generatedQuizData.forEach((item, index) => {
-        const answerText = getElementByIdValue(`answer_${index}`);
+        const answerText = getElementByIdValue(`answer_${index}`); // Function from common.js
         if (answerText === null || answerText === '') {
             allAnswersSubmitted = false;
         }
@@ -127,31 +127,34 @@ async function submitQuiz() {
     // Identify the current chapter for context (though prompt is generic)
     const chapterId = generateBtn ? generateBtn.getAttribute('data-chapter-id') : 'Unknown';
 
-    const markingPrompt = `
-        You are an IGCSE Chemistry examiner providing feedback. Evaluate each student answer against the question and guideline. The output MUST be a valid JSON array. For each question number provided in the input data, create a JSON object in the output array. Each object MUST have keys: "question_number" (integer), "feedback" (string evaluating the student answer AND providing a concise correct explanation/answer, using MathJax delimiters \\\\( ... \\\\) for symbols/formulas), and "mark" (string: "Correct", "Partially Correct", or "Incorrect"). Use \\n for newlines within the feedback string where appropriate, especially before the 'Correct Answer' part.
+    // Prepare the prompt for the marking function (assuming the Edge Function handles this specific prompt structure)
+    const markingPromptData = {
+        chapterContext: chapterId,
+        answers: answersToMark
+    };
 
-        Input Data (student answers to mark for Chapter ${chapterId}): ${JSON.stringify(answersToMark, null, 2)}
+    // We still need a prompt *structure* for the general `callGeminiAPI` function,
+    // assuming the Edge Function expects a JSON object containing the actual marking details.
+    // The Edge Function itself will construct the detailed prompt for Gemini.
+    // Let's create a simplified "prompt object" to send to our Edge Function.
+    // Modify this if your Edge Function expects something different.
+    const promptForEdgeFunction = JSON.stringify({
+        action: "mark_quiz", // Indicate the desired action
+        payload: markingPromptData // Send the answers payload
+    });
 
-        Instructions for feedback content:
-        - Evaluate the 'student_answer'.
-        - Explain *why* the answer is correct/partially correct/incorrect, referencing relevant concepts.
-        - **Crucially:** Include a clearly marked explanation section like "\\n\\n**Correct Answer:** ..." within the feedback string.
-        - For calculation questions, show key steps.
-
-        Example JSON object format in the output array:
-        {
-            "question_number": 1,
-            "feedback": "Your definition identified the minimum energy but missed the context of reacting particles.\\n\\n**Correct Answer:** Activation energy (\\\\( E_a \\\\)) is the minimum energy that colliding particles must possess in order to react.",
-            "mark": "Partially Correct"
-        }
-    `;
 
     try {
-        const feedbackJson = await callGeminiAPI(markingPrompt); // Function from common.js
+        // Call the same generic API function, but send the marking data/prompt structure
+        const feedbackJson = await callGeminiAPI(promptForEdgeFunction); // Function from common.js
 
+        // Validate the feedback response structure
         if (!Array.isArray(feedbackJson) || feedbackJson.length !== answersToMark.length || !feedbackJson.every(f => typeof f.question_number === 'number' && typeof f.feedback === 'string' && typeof f.mark === 'string')) {
-            console.error("Invalid JSON structure received for feedback:", feedbackJson);
-            throw new Error("AI marking response was not the expected JSON array format.");
+            console.error("Invalid JSON structure received for feedback from backend:", feedbackJson);
+            if (feedbackJson && feedbackJson.error) {
+                 throw new Error(feedbackJson.error);
+            }
+            throw new Error("AI marking response from backend was not the expected JSON array format.");
         }
 
         feedbackJson.sort((a, b) => a.question_number - b.question_number); // Ensure order
@@ -180,11 +183,14 @@ async function submitQuiz() {
             MathJax.typesetPromise([feedbackContent]).catch(console.error);
         }
         submitBtn.classList.add('hidden'); // Hide submit after marking
-        generateBtn.classList.remove('hidden'); // Show generate again
-        generateBtn.disabled = false; // Re-enable generate button
+        // Re-enable generate button after successful marking
+        if(generateBtn) {
+             generateBtn.classList.remove('hidden');
+             generateBtn.disabled = false;
+        }
     } catch (error) {
         console.error("Error submitting quiz:", error);
-        feedbackContent.innerHTML = `<p class="error">Feedback failed: ${error.message}. Check console.</p>`;
+        feedbackContent.innerHTML = `<p class="error">Feedback failed: ${error.message}. Check console and Supabase function logs.</p>`;
         feedbackContainer.classList.remove('hidden');
         submitBtn.disabled = false; // Re-enable submit on failure
         // Re-enable textareas on failure
@@ -192,6 +198,8 @@ async function submitQuiz() {
             const ta = document.getElementById(`answer_${index}`);
             if (ta) ta.disabled = false;
         });
+         // Keep generate button disabled if feedback failed, let user retry submit
+         if(generateBtn) generateBtn.disabled = true;
     } finally {
         markingLoading.classList.add('hidden');
     }
@@ -207,5 +215,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     if (submitBtn) {
         submitBtn.addEventListener('click', submitQuiz);
+    }
+
+    // Helper function from common.js - ensure common.js is loaded before quiz.js
+    // If not already defined globally (it should be if common.js is loaded first)
+    if (typeof getElementByIdValue === 'undefined') {
+        window.getElementByIdValue = function(id, type = 'string') {
+            const element = document.getElementById(id);
+            if (!element) return null;
+            const value = element.value.trim();
+            if (type === 'number') {
+                return value === '' || isNaN(parseFloat(value)) ? null : parseFloat(value);
+            }
+            return value;
+        }
     }
 });
