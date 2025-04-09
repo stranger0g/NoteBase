@@ -1,4 +1,6 @@
 // js/quiz.js
+// Ensure this file is using the version from the previous step
+// where the API key check was removed.
 
 let generatedQuizData = []; // Holds the currently generated questions
 
@@ -30,21 +32,18 @@ async function generateQuiz() {
     submitBtn.classList.add('hidden');
     generatedQuizData = [];
 
-    const prompt = quizPrompts[chapterId]; // Get the correct prompt
+    const prompt = quizPrompts[chapterId]; // Get the correct prompt for generation
 
     try {
-        // Call the (modified) callGeminiAPI which now uses the Edge Function URL
-        // It expects the prompt text directly
-        const quizJson = await callGeminiAPI(prompt); // Function from common.js
+        // For generation, send the prompt string inside an object
+        const payloadForEdgeFunction = { prompt: prompt };
+        const quizJson = await callGeminiAPI(payloadForEdgeFunction); // Function from common.js
 
-        // Validate the response structure (ensure it's the expected array from the Edge Func)
+        // Validate the response structure
         if (!Array.isArray(quizJson) || quizJson.length === 0 || !quizJson.every(q => typeof q.question === 'string' && typeof q.answer_guideline === 'string')) {
-            console.error("Invalid JSON structure received from backend:", quizJson);
-            // Check if it's an error object returned by the edge function explicitly
-            if (quizJson && quizJson.error) {
-                throw new Error(quizJson.error); // Throw the specific error from the backend
-            }
-            throw new Error("AI response from backend was not the expected JSON array format.");
+            console.error("Invalid JSON structure received from backend for generation:", quizJson);
+            if (quizJson && quizJson.error) { throw new Error(quizJson.error); }
+            throw new Error("AI response from backend was not the expected JSON array format for quiz questions.");
         }
 
         generatedQuizData = quizJson;
@@ -52,7 +51,6 @@ async function generateQuiz() {
         quizJson.forEach((item, index) => {
             const div = document.createElement('div');
             div.className = 'quiz-question-item';
-            // Unescape MathJax delimiters for display
             const questionText = item.question.replace(/\\\\/g, '\\');
             div.innerHTML = `
                 <p><strong>Question ${index + 1}:</strong> ${questionText}</p>
@@ -69,7 +67,6 @@ async function generateQuiz() {
 
     } catch (error) {
         console.error("Error generating quiz:", error);
-        // Display the error more informatively
         quizContainer.innerHTML = `<p class="error">Quiz generation failed: ${error.message}. Check the browser console and Supabase function logs for details.</p>`;
         generateBtn.disabled = false; // Re-enable button on failure
     } finally {
@@ -104,7 +101,7 @@ async function submitQuiz() {
         }
         answersToMark.push({
             question_number: index + 1,
-            question: item.question, // Send original question (with escaped MathJax)
+            question: item.question,
             answer_guideline: item.answer_guideline,
             student_answer: answerText || "(No answer provided)"
         });
@@ -124,36 +121,25 @@ async function submitQuiz() {
         }
     }
 
-    // Identify the current chapter for context (though prompt is generic)
     const chapterId = generateBtn ? generateBtn.getAttribute('data-chapter-id') : 'Unknown';
 
-    // Prepare the prompt for the marking function (assuming the Edge Function handles this specific prompt structure)
-    const markingPromptData = {
-        chapterContext: chapterId,
-        answers: answersToMark
+    // Prepare the payload for the Edge Function for marking
+    const payloadForEdgeFunction = {
+        action: "mark_quiz", // Crucial identifier for the Edge Function
+        payload: {
+            chapterContext: chapterId,
+            answers: answersToMark
+        }
     };
 
-    // We still need a prompt *structure* for the general `callGeminiAPI` function,
-    // assuming the Edge Function expects a JSON object containing the actual marking details.
-    // The Edge Function itself will construct the detailed prompt for Gemini.
-    // Let's create a simplified "prompt object" to send to our Edge Function.
-    // Modify this if your Edge Function expects something different.
-    const promptForEdgeFunction = JSON.stringify({
-        action: "mark_quiz", // Indicate the desired action
-        payload: markingPromptData // Send the answers payload
-    });
-
-
     try {
-        // Call the same generic API function, but send the marking data/prompt structure
-        const feedbackJson = await callGeminiAPI(promptForEdgeFunction); // Function from common.js
+        // Call the API function with the specific marking payload structure
+        const feedbackJson = await callGeminiAPI(payloadForEdgeFunction); // Function from common.js
 
         // Validate the feedback response structure
         if (!Array.isArray(feedbackJson) || feedbackJson.length !== answersToMark.length || !feedbackJson.every(f => typeof f.question_number === 'number' && typeof f.feedback === 'string' && typeof f.mark === 'string')) {
             console.error("Invalid JSON structure received for feedback from backend:", feedbackJson);
-            if (feedbackJson && feedbackJson.error) {
-                 throw new Error(feedbackJson.error);
-            }
+            if (feedbackJson && feedbackJson.error) { throw new Error(feedbackJson.error); }
             throw new Error("AI marking response from backend was not the expected JSON array format.");
         }
 
@@ -168,7 +154,6 @@ async function submitQuiz() {
             else if (item.mark === 'Partially Correct') markClass = 'warning';
             else markClass = 'error'; // Incorrect or other
 
-            // Unescape MathJax and newlines for display
             const feedbackHtml = item.feedback.replace(/\\n/g, '<br>').replace(/\\\\/g, '\\');
 
             div.innerHTML = `
@@ -183,29 +168,27 @@ async function submitQuiz() {
             MathJax.typesetPromise([feedbackContent]).catch(console.error);
         }
         submitBtn.classList.add('hidden'); // Hide submit after marking
-        // Re-enable generate button after successful marking
         if(generateBtn) {
              generateBtn.classList.remove('hidden');
              generateBtn.disabled = false;
         }
     } catch (error) {
         console.error("Error submitting quiz:", error);
+        // Display the specific error caught
         feedbackContent.innerHTML = `<p class="error">Feedback failed: ${error.message}. Check console and Supabase function logs.</p>`;
         feedbackContainer.classList.remove('hidden');
         submitBtn.disabled = false; // Re-enable submit on failure
-        // Re-enable textareas on failure
         answersToMark.forEach((_, index) => {
             const ta = document.getElementById(`answer_${index}`);
             if (ta) ta.disabled = false;
         });
-         // Keep generate button disabled if feedback failed, let user retry submit
-         if(generateBtn) generateBtn.disabled = true;
+         if(generateBtn) generateBtn.disabled = true; // Keep generate disabled if feedback failed
     } finally {
         markingLoading.classList.add('hidden');
     }
 }
 
-// Add event listeners (ensure this runs after the DOM is loaded)
+// Add event listeners
 document.addEventListener('DOMContentLoaded', () => {
     const generateBtn = document.getElementById('generateQuizBtn');
     const submitBtn = document.getElementById('submitQuizBtn');
