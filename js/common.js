@@ -3,7 +3,7 @@
 // Supabase Configuration (Replace with your actual project details)
 const SUPABASE_URL = 'https://obmssdwhrvfiqlwykujv.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ibXNzZHdocnZmaXFsd3lrdWp2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDQyMDEyNTAsImV4cCI6MjA1OTc3NzI1MH0.RptP25yB4kq4yzJl1wXkZkl70WyoQHMoZtqY4qs-IgQ';
-const SUPABASE_EDGE_FUNCTION_URL = 'https://obmssdwhrvfiqlwykujv.supabase.co/functions/v1/gemini-proxyL'; // URL for your gemini-proxy function
+const SUPABASE_EDGE_FUNCTION_URL = 'https://obmssdwhrvfiqlwykujv.supabase.co/functions/v1/gemini-proxy'; // URL for your gemini-proxy function
 
 // Constants
 const AVOGADRO_CONSTANT = 6.02e23;
