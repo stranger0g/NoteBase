@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCSE Chemistry 0620 - Chapter 5: Chemical Energetics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        MathJax = {
+          tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$']], processEscapes: true, tags: 'ams' },
+          svg: { fontCache: 'global' },
+          options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'], ignoreHtmlClass: 'tex2jax_ignore', processHtmlClass: 'tex2jax_process' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+    <div id="credits-banner">
+        <span>Developed by <strong>Raied</strong></span>
+        <a href="https://www.instagram.com/strange0g" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/stranger0g" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:superraied@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="container">
+        <h1><i class="fas fa-thermometer-half"></i> Chapter 5: Chemical Energetics</h1>
+
+        <section id="section-5-1">
+            <h2><i class="fas fa-fire"></i> 5.1 Exothermic and Endothermic Reactions</h2>
+            <div class="syllabus-point">
+                <span class="core">1: State that an exothermic reaction transfers thermal energy to the surroundings leading to an increase in the temperature of the surroundings</span>
+                <div class="definition">
+                    <strong style="color: var(--exo-color);">Exothermic Reaction:</strong> A reaction that releases thermal energy (heat) <strong>to</strong> the surroundings. This causes the temperature of the surroundings to <strong>increase</strong>. Think: <span class="tooltip">Exo = Exit<span class="tooltiptext">Heat energy EXITS the chemical system.</span></span>
+                </div>
+                <div class="example">
+                    <h4>Common Examples of Exothermic Reactions:</h4>
+                    <ul>
+                        <li><i class="fas fa-fire" style="color: orange;"></i> <strong>Combustion:</strong> Burning fuels like methane (\(CH_4 + 2O_2 \rightarrow CO_2 + 2H_2O\)) or hydrogen (\(2H_2 + O_2 \rightarrow 2H_2O\)). Gives out heat and light.</li>
+                        <li><i class="fas fa-flask" style="color: purple;"></i> <strong>Neutralisation:</strong> Reaction between acids and bases (e.g., \(HCl(aq) + NaOH(aq) \rightarrow NaCl(aq) + H_2O(l)\)). Feels warm.</li>
+                        <li><i class="fas fa-atom" style="color: grey;"></i> <strong>Respiration:</strong> Biological process releasing energy from glucose.</li>
+                        <li><i class="fas fa-sync-alt" style="color: red;"></i> <strong>Oxidation Reactions:</strong> Many oxidation reactions, like the rusting of iron, are exothermic.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="syllabus-point">
+                <span class="core">2: State that an endothermic reaction takes in thermal energy from the surroundings leading to a decrease in the temperature of the surroundings</span>
+                <div class="definition">
+                     <strong style="color: var(--endo-color);">Endothermic Reaction:</strong> A reaction that absorbs thermal energy (heat) <strong>from</strong> the surroundings. This causes the temperature of the surroundings to <strong>decrease</strong>. Think: <span class="tooltip">Endo = Enter<span class="tooltiptext">Heat energy ENTERS the chemical system.</span></span>
+                </div>
+                <div class="example">
+                    <h4>Common Examples of Endothermic Reactions:</h4>
+                    <ul>
+                        <li><i class="fas fa-snowflake" style="color: lightblue;"></i> <strong>Thermal Decomposition:</strong> Breaking down compounds using heat (e.g., Calcium carbonate decomposition: \(CaCO_3(s) \xrightarrow{heat} CaO(s) + CO_2(g)\)). Heat must be continuously supplied.</li>
+                        <li><i class="fas fa-tint" style="color: blue;"></i> <strong>Dissolving some salts:</strong> Dissolving ammonium nitrate (\(NH_4NO_3\)) or potassium chloride (KCl) in water makes the solution feel cold. Used in instant cold packs.</li>
+                        <li><i class="fas fa-leaf" style="color: green;"></i> <strong>Photosynthesis:</strong> Plants absorbing light energy to convert CO₂ and water into glucose. \(6CO_2 + 6H_2O \xrightarrow{light} C_6H_{12}O_6 + 6O_2\).</li>
+                        <li><i class="fas fa-bolt" style="color: gold;"></i> <strong>Electrolysis:</strong> Requires electrical energy input to decompose compounds.</li>
+                        <li><i class="fas fa-lightbulb" style="color: grey;"></i> Reaction between citric acid and sodium hydrogen carbonate.</li>
+                    </ul>
+                </div>
+            </div>
+
+             <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">4: State that the transfer of thermal energy during a reaction is called the enthalpy change, ∆H, of the reaction. State that ∆H is negative for exothermic reactions and positive for endothermic reactions</span>
+                <div class="definition">
+                    <strong>Enthalpy Change (\(\Delta H\)):</strong> The amount of heat energy transferred (absorbed or released) during a chemical reaction carried out at constant pressure. Usually measured in kilojoules per mole (kJ/mol).
+                    <ul>
+                        <li>For <strong>Exothermic Reactions:</strong> Heat is released, the products have lower enthalpy (stored energy) than the reactants. \(\Delta H\) has a <strong style="color: var(--exo-color);">negative</strong> value (e.g., \(\Delta H = -572\) kJ/mol).</li>
+                        <li>For <strong>Endothermic Reactions:</strong> Heat is absorbed, the products have higher enthalpy than the reactants. \(\Delta H\) has a <strong style="color: var(--endo-color);">positive</strong> value (e.g., \(\Delta H = +178\) kJ/mol).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-5-2">
+            <h2><i class="fas fa-chart-line"></i> 5.2 Reaction Pathway Diagrams & Activation Energy</h2>
+             <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">5: Define activation energy, \(E_a\), as the minimum energy that colliding particles must have to react</span>
+                <div class="definition">
+                    <strong>Activation Energy (\(E_a\)):</strong> The minimum amount of energy that colliding reactant particles must possess in order for a reaction to occur (i.e., for bonds to break and new bonds to form). It represents the energy barrier that must be overcome for the reaction to start.
+                </div>
+            </div>
+
+            <div class="syllabus-point">
+                <span class="core">3: Interpret reaction pathway diagrams showing exothermic and endothermic reactions</span><br>
+                <span class="supplement-tag">6: Draw and label reaction pathway diagrams for exothermic and endothermic reactions using information provided, to include: (a) reactants (b) products (c) enthalpy change of the reaction, ∆H (d) activation energy, \(E_a\)</span>
+             </div>
+             <p>Reaction pathway diagrams (also called energy level diagrams or reaction profiles) show the change in enthalpy during the course of a reaction.</p>
+
+             <h4>Exothermic Reaction Profile</h4>
+             <p>Energy is released. Products have less energy than reactants. \(\Delta H\) is negative.</p>
+             <img src="https://i.ibb.co/YTFdBsNX/Screenshot-2025-04-08-193419.png" alt="Exothermic Reaction Profile Diagram showing reactants higher than products, negative delta H, and activation energy Ea from reactants to peak." class="reaction-profile-image">
+             <ul>
+                 <li><strong>(a) Reactants:</strong> Starting energy level (higher).</li>
+                 <li><strong>(b) Products:</strong> Ending energy level (lower).</li>
+                 <li><strong>(c) Enthalpy Change (\(\Delta H\)):</strong> Vertical distance between reactant and product levels (arrow pointing down, negative value).</li>
+                 <li><strong>(d) Activation Energy (\(E_a\)):</strong> Vertical distance from reactant level to the peak of the curve (the energy barrier).</li>
+             </ul>
+
+             <h4>Endothermic Reaction Profile</h4>
+             <p>Energy is absorbed. Products have more energy than reactants. \(\Delta H\) is positive.</p>
+              <img src="https://i.ibb.co/Fqk19sm2/Screenshot-2025-04-08-193444.png" alt="Endothermic Reaction Profile Diagram showing products higher than reactants, positive delta H, and activation energy Ea from reactants to peak." class="reaction-profile-image">
+             <ul>
+                 <li><strong>(a) Reactants:</strong> Starting energy level (lower).</li>
+                 <li><strong>(b) Products:</strong> Ending energy level (higher).</li>
+                 <li><strong>(c) Enthalpy Change (\(\Delta H\)):</strong> Vertical distance between reactant and product levels (arrow pointing up, positive value).</li>
+                 <li><strong>(d) Activation Energy (\(E_a\)):</strong> Vertical distance from reactant level to the peak of the curve.</li>
+             </ul>
+             <div class="alert alert-info">
+                <i class="fas fa-lightbulb"></i> <strong>Role of Catalysts:</strong> Catalysts increase reaction rate by providing an alternative reaction pathway with a lower activation energy (\(E_a\)). They do not affect the overall enthalpy change (\(\Delta H\)). On the diagram, a catalyst lowers the height of the peak but the start and end levels remain the same.
+             </div>
+        </section>
+
+         <section id="section-5-3">
+            <h2><i class="fas fa-link"></i> 5.3 Bond Energies and Enthalpy Change</h2>
+             <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">7: State that bond breaking is an endothermic process and bond making is an exothermic process and explain the enthalpy change of a reaction in terms of bond breaking and bond making</span>
+                <h4>Energy Changes and Chemical Bonds</h4>
+                <ul>
+                    <li><strong>Bond Breaking:</strong> Energy must be supplied to break existing chemical bonds in the reactant molecules. This process requires energy input from the surroundings. Bond breaking is always <strong style="color: var(--endo-color);">endothermic</strong> (energy absorbed, +ve energy change).</li>
+                    <li><strong>Bond Making:</strong> Energy is released when new chemical bonds are formed in the product molecules. This process releases energy to the surroundings. Bond making is always <strong style="color: var(--exo-color);">exothermic</strong> (energy released, -ve energy change).</li>
+                </ul>
+                 <div class="definition">
+                    <strong>Explanation of Overall Enthalpy Change (\(\Delta H\)):</strong>
+                    <p>The overall enthalpy change for a reaction depends on the balance between the energy required to break bonds in the reactants and the energy released when new bonds are formed in the products.</p>
+                    <strong>\(\Delta H\) = Energy taken in to BREAK bonds (Reactants) + Energy released when MAKING bonds (Products)</strong>
+                    <br><em>(Remember bond making energy release is negative)</em>
+                    <br><strong>OR</strong> (more commonly used in calculation):
+                    <br>
+                    <strong>\( \Delta H = \Sigma (\text{Bond Energies of Bonds Broken}) - \Sigma (\text{Bond Energies of Bonds Formed}) \)</strong>
+                    <br><em>(Where Bond Energy values are always positive)</em>
+                 </div>
+                 <ul>
+                    <li>If more energy is released making bonds than is required to break bonds (\(\Sigma E_{\text{formed}} > \Sigma E_{\text{broken}}\)), the overall reaction is <strong style="color: var(--exo-color);">Exothermic</strong> (\(\Delta H\) is negative).</li>
+                    <li>If more energy is required to break bonds than is released making bonds (\(\Sigma E_{\text{broken}} > \Sigma E_{\text{formed}}\)), the overall reaction is <strong style="color: var(--endo-color);">Endothermic</strong> (\(\Delta H\) is positive).</li>
+                </ul>
+            </div>
+
+             <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">8: Calculate the enthalpy change of a reaction using bond energies</span>
+                <div class="definition">
+                    <strong>Bond Energy (or Bond Enthalpy):</strong> The average amount of energy required to break one mole of a specific type of covalent bond in the gaseous state (measured in kJ/mol). Bond energy values are always positive (endothermic process).
+                </div>
+                <p><strong>Calculation Steps using \( \Delta H = \Sigma E_{\text{broken}} - \Sigma E_{\text{formed}} \):</strong></p>
+                 <ol>
+                     <li>Draw the displayed formulae of all reactant and product molecules to clearly identify all the bonds present.</li>
+                     <li>List all the bonds broken in the reactant molecules and multiply the number of each type of bond by its average bond energy (from given data). Sum these values to get \(\Sigma E_{\text{broken}}\).</li>
+                     <li>List all the bonds formed in the product molecules and multiply the number of each type of bond by its average bond energy. Sum these values to get \(\Sigma E_{\text{formed}}\).</li>
+                     <li>Calculate the enthalpy change: \(\Delta H = \Sigma E_{\text{broken}} - \Sigma E_{\text{formed}}\).</li>
+                     <li>Determine if the reaction is exothermic (\(\Delta H\) < 0) or endothermic (\(\Delta H\) > 0).</li>
+                 </ol>
+
+                 <div class="interactive-section bond-energy-calc">
+                     <h4><i class="fas fa-calculator"></i> Bond Energy Calculator for \(\Delta H\)</h4>
+                     <p>Use the formula \(\Delta H = \Sigma E_{\text{broken}} - \Sigma E_{\text{formed}}\) using total energies.</p>
+
+                     <div class="example">
+                         <h4>Example Calculation: Formation of Ammonia \(N_2(g) + 3H_2(g) \rightarrow 2NH_3(g)\)</h4>
+                         <p>Given Bond Energies (kJ/mol): N≡N = 945; H-H = 436; N-H = 391</p>
+                         <p><strong>Bonds Broken (Reactants):</strong></p>
+                         <ul><li>1 x (N≡N) = 1 x 945 = 945 kJ/mol</li><li>3 x (H-H) = 3 x 436 = 1308 kJ/mol</li></ul>
+                         <p>\(\Sigma E_{\text{broken}} = 945 + 1308 = \mathbf{2253}\) kJ/mol</p>
+                         <p><strong>Bonds Formed (Products):</strong></p>
+                         <ul><li>Each \(NH_3\) molecule has 3 (N-H) bonds.</li><li>There are 2 \(NH_3\) molecules formed.</li><li>Total (N-H) bonds formed = 2 molecules x 3 bonds/molecule = 6 bonds.</li><li>6 x (N-H) = 6 x 391 = 2346 kJ/mol</li></ul>
+                         <p>\(\Sigma E_{\text{formed}} = \mathbf{2346}\) kJ/mol</p>
+                         <p><strong>Enthalpy Change (\(\Delta H\)):</strong></p>
+                         <p>\(\Delta H = \Sigma E_{\text{broken}} - \Sigma E_{\text{formed}} = 2253 - 2346 = \strong style="color: var(--exo-color);">-93 kJ/mol</strong>\)</p>
+                         <p>Conclusion: The reaction is exothermic.</p>
+                     </div>
+
+                     <div class="controls">
+                        <label for="bondsBrokenEnergy">Total Energy IN (\(\Sigma E_{\text{broken}}\)) (kJ/mol):</label>
+                        <input type="number" id="bondsBrokenEnergy" placeholder="Sum of broken bond energies" aria-label="Total energy for bonds broken">
+                     </div>
+                     <div class="controls">
+                        <label for="bondsFormedEnergy">Total Energy OUT (\(\Sigma E_{\text{formed}}\)) (kJ/mol):</label>
+                        <input type="number" id="bondsFormedEnergy" placeholder="Sum of formed bond energies" aria-label="Total energy for bonds formed">
+                     </div>
+                     <button onclick="calculateDeltaH()" aria-label="Calculate Delta H"><i class="fas fa-calculator"></i> Calculate \(\Delta H\)</button>
+                     <div class="output" id="deltaHOutput">Enter total energies above and click Calculate.</div>
+
+                      <div class="alert alert-warning" style="margin-top: 20px;">
+                         <i class="fas fa-exclamation-triangle"></i> Bond energy calculations provide an *estimate* of \(\Delta H\). Actual experimental values may differ slightly because average bond energies are used, and they strictly apply to reactions in the gaseous state.
+                     </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- AI Quiz Section -->
+        <section id="aiQuizSection">
+            <h3><i class="fas fa-question-circle"></i> AI Generated Quiz (Chapter 5)</h3>
+             <div id="apiKeyWarning" class="hidden alert alert-danger">
+                 <i class="fas fa-key"></i> <strong>API Key Needed:</strong> Please ensure the API key is correctly set in <code>js/common.js</code> to enable this feature.
+             </div>
+            <button id="generateQuizBtn" data-chapter-id="5">
+                <i class="fas fa-magic"></i> Generate Quiz Questions
+            </button>
+            <span id="quizLoading" class="loading-indicator hidden"> Generating... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizContainer" class="tex2jax_process"></div>
+            <button id="submitQuizBtn" class="hidden">
+                 <i class="fas fa-check"></i> Submit Answers for Marking
+            </button>
+            <span id="markingLoading" class="loading-indicator hidden"> Marking... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizFeedback" class="hidden tex2jax_process">
+                 <h4><i class="fas fa-marker"></i> AI Feedback</h4>
+                 <div id="feedbackContent"></div>
+            </div>
+        </section>
+
+        <!-- Bottom Page Navigation -->
+        <section class="page-navigation nav-last-page">
+            <a href="Chapter4.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Previous Chapter</a>
+            <a href="index.html" class="btn-nav btn-home"><i class="fas fa-home"></i> Home</a>
+            <a href="#" class="btn-nav btn-next">Next Chapter <i class="fas fa-arrow-right"></i></a> <!-- Hidden by CSS -->
+        </section>
+
+    </div> <!-- End Container -->
+
+    <script src="js/common.js"></script>
+    <script src="js/quiz_prompts.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/chapter5.js"></script>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCSE Chemistry 0620 - Chapter 4: Electrochemistry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        MathJax = {
+          tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$']], processEscapes: true, tags: 'ams' },
+          svg: { fontCache: 'global' },
+          options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'], ignoreHtmlClass: 'tex2jax_ignore', processHtmlClass: 'tex2jax_process' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+    <div id="credits-banner">
+        <span>Developed by <strong>Raied</strong></span>
+        <a href="https://www.instagram.com/strange0g" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/stranger0g" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:superraied@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="container">
+        <h1><i class="fas fa-bolt"></i> Chapter 4: Electrochemistry</h1>
+
+        <section id="section-4-1">
+            <h2><i class="fas fa-plug"></i> 4.1 Electrolysis</h2>
+
+            <div class="syllabus-point">
+                <span class="core">1: Define electrolysis as the decomposition of an ionic compound, when molten or in aqueous solution, by the passage of an electric current</span>
+                <div class="definition">
+                    <strong>Electrolysis:</strong> The chemical decomposition (breaking down) of an <span class="tooltip">ionic compound<span class="tooltiptext">Compound containing positive and negative ions, typically formed between metals and non-metals.</span></span>, either when it is molten (melted) or dissolved in water (aqueous solution), caused by passing a direct electric current through it. This process requires the ions to be mobile (free to move).
+                </div>
+            </div>
+
+            <div class="syllabus-point">
+                <span class="core">2: Identify in simple electrolytic cells: (a) the anode as the positive electrode (b) the cathode as the negative electrode (c) the electrolyte as the molten or aqueous substance that undergoes electrolysis</span>
+                <p>Components of a simple electrolytic cell:</p>
+                <ul>
+                    <li><i class="fas fa-plug" style="color: grey;"></i> <strong>Electrodes:</strong> Conductors through which electricity enters or leaves the electrolyte. Often made of inert materials like graphite (carbon) or platinum, unless they are intended to react (active electrodes).
+                        <ul>
+                            <li><i class="fas fa-plus-circle" style="color: var(--error-color);"></i> <strong>(a) Anode:</strong> The <strong>positive (+)</strong> electrode. It attracts anions (negative ions). Oxidation occurs here. (Mnemonic: AnOx - Anode Oxidation).</li>
+                            <li><i class="fas fa-minus-circle" style="color: var(--success-color);"></i> <strong>(b) Cathode:</strong> The <strong>negative (-)</strong> electrode. It attracts cations (positive ions). Reduction occurs here. (Mnemonic: RedCat - Reduction Cathode).</li>
+                        </ul>
+                    </li>
+                    <li><i class="fas fa-tint" style="color: var(--primary-color);"></i> <strong>(c) Electrolyte:</strong> The <strong>molten</strong> ionic compound or an <strong>aqueous solution</strong> containing ions. The ions must be mobile to conduct electricity and undergo reaction.</li>
+                    <li><i class="fas fa-car-battery"></i> <strong>Power Supply:</strong> Provides the direct current (DC) necessary to drive the non-spontaneous reactions. Electrons flow from the negative terminal of the power supply to the cathode, and from the anode to the positive terminal.</li>
+                </ul>
+                 <div class="structure-visualization"><h4>Simple Electrolytic Cell Setup</h4><svg viewBox="0 0 200 150"><rect x="10" y="100" width="180" height="40" fill="#e0f7fa" stroke="#b0bec5"/> <line x1="60" y1="100" x2="60" y2="30" stroke="#757575" stroke-width="3"/><line x1="140" y1="100" x2="140" y2="30" stroke="#757575" stroke-width="3"/><rect x="40" y="10" width="120" height="20" fill="#f5f5f5" stroke="#bdbdbd"/><line x1="60" y1="30" x2="80" y2="10" stroke="#424242"/><line x1="140" y1="30" x2="120" y2="10" stroke="#424242"/><text x="85" y="24" font-size="10" fill="#424242">+</text> <text x="115" y="24" font-size="10" fill="#424242">-</text><text x="100" y="7" font-size="9" fill="#424242">DC Supply</text><text x="58" y="115" font-size="10" fill="#d32f2f" text-anchor="end">Anode (+)</text><text x="142" y="115" font-size="10" fill="#2e7d32">Cathode (-)</text><text x="100" y="130" font-size="10" fill="#0277bd" text-anchor="middle">Electrolyte (Molten/Aqueous)</text></svg><p>Basic setup showing electrodes immersed in electrolyte, connected to a DC power supply.</p></div>
+            </div>
+
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">8: Describe the transfer of charge during electrolysis to include: (a) the movement of electrons in the external circuit (b) the loss or gain of electrons at the electrodes (c) the movement of ions in the electrolyte</span>
+                <h4>Charge Transfer Mechanism</h4>
+                <ol>
+                    <li><strong>(a) External Circuit:</strong> The power supply pushes electrons. Electrons flow from the negative terminal, through the wire, to the <strong>cathode</strong>. Electrons flow away from the <strong>anode</strong>, through the wire, back to the positive terminal of the power supply. <strong style="color: var(--primary-color);">(Charge carrier: electrons)</strong></li>
+                    <li><strong>(b) Electrodes (Redox Reactions):</strong>
+                        <ul>
+                            <li>At the <strong>Cathode (-):</strong> Positive ions (cations) from the electrolyte are attracted. They <strong style="color: var(--success-color);">gain electrons</strong> supplied by the external circuit (Reduction). E.g., \( \text{M}^{n+}(aq/l) + ne^- \rightarrow \text{M}(s/l) \) or \( 2H^+(aq) + 2e^- \rightarrow H_2(g) \).</li>
+                            <li>At the <strong>Anode (+):</strong> Negative ions (anions) from the electrolyte are attracted (or sometimes the electrode material itself reacts). They <strong style="color: var(--error-color);">lose electrons</strong> to the external circuit (Oxidation). E.g., \( \text{X}^{m-}(aq/l) \rightarrow \text{X} + me^- \) or \( 4OH^-(aq) \rightarrow O_2(g) + 2H_2O(l) + 4e^- \).</li>
+                        </ul>
+                    </li>
+                    <li><strong>(c) Electrolyte:</strong> Mobile ions move to maintain electrical neutrality and complete the circuit. <strong>Cations (+)</strong> move towards the <strong>cathode (-)</strong>. <strong>Anions (-)</strong> move towards the <strong>anode (+)</strong>. <strong style="color: var(--primary-color);">(Charge carrier: ions)</strong></li>
+                </ol>
+                <div class="alert alert-info"> <i class="fas fa-info-circle"></i> Key Idea: The circuit is completed by electron flow in the wires and ion flow in the electrolyte, linked by redox reactions at the electrode surfaces. </div>
+            </div>
+
+            <div class="syllabus-point">
+                <span class="core">3: Identify the products formed at the electrodes and describe the observations made during the electrolysis of: (a) molten lead(II) bromide (b) concentrated aqueous sodium chloride (c) dilute sulfuric acid using inert electrodes made of platinum or carbon / graphite</span>
+                <div class="alert alert-warning"> <i class="fas fa-exclamation-triangle"></i> These examples use Inert Electrodes (Carbon/Graphite or Platinum), which do not participate in the reaction. </div>
+
+                <div class="example">
+                    <h4><i class="fas fa-burn"></i> (a) Molten Lead(II) Bromide (PbBr₂)</h4>
+                    <p>Electrolyte: Molten PbBr₂, contains mobile \(Pb^{2+}(l)\) and \(Br^{-}(l)\) ions.</p>
+                    <p><strong>Cathode (-):</strong> Attracts \(Pb^{2+}\). <br> Reaction: \(Pb^{2+}(l) + 2e^- \rightarrow Pb(l)\). <br> Observation: Silvery, molten metal (lead) forms at the cathode.</p>
+                    <p><strong>Anode (+):</strong> Attracts \(Br^{-}\). <br> Reaction: \(2Br^-(l) \rightarrow Br_2(g) + 2e^-\). <br> Observation: Brown/orange vapour or gas (bromine) evolves at the anode.</p>
+                </div>
+
+                <div class="example">
+                    <h4><i class="fas fa-tint"></i> (b) Concentrated Aqueous Sodium Chloride (NaCl(aq))</h4>
+                    <p>Electrolyte: Contains \(Na^+(aq)\), \(Cl^-(aq)\) from NaCl, and \(H^+(aq)\), \(OH^-(aq)\) from water dissociation.</p>
+                    <p><strong>Cathode (-):</strong> Attracts \(Na^+\) and \(H^+\). H⁺ is less reactive (easier to reduce) than Na⁺. <br> Reaction: \(2H^+(aq) + 2e^- \rightarrow H_2(g)\). <br> Observation: Bubbles of colourless gas (hydrogen) evolve at the cathode. Test: Lit splint gives a 'pop'.</p>
+                    <p><strong>Anode (+):</strong> Attracts \(Cl^-\) and \(OH^-\). In CONCENTRATED solution, Cl⁻ is preferentially discharged over OH⁻. <br> Reaction: \(2Cl^-(aq) \rightarrow Cl_2(g) + 2e^-\). <br> Observation: Bubbles of pale green gas (chlorine) evolve at the anode. Test: Bleaches damp blue litmus paper.</p>
+                    <p>Remaining Solution: \(Na^+(aq)\) and \(OH^-(aq)\) ions remain, forming sodium hydroxide solution, which is alkaline (pH increases).</p>
+                </div>
+
+                 <div class="example">
+                    <h4><i class="fas fa-flask"></i> (c) Dilute Sulfuric Acid (H₂SO₄(aq))</h4>
+                     <p>Electrolyte: Contains \(H^+(aq)\) and \(SO_4^{2-}(aq)\) from the acid, and also \(H^+(aq)\) and \(OH^-(aq)\) from water. Primarily \(H^+\) and \(OH^-\) ions from water are involved.</p>
+                    <p><strong>Cathode (-):</strong> Attracts \(H^+\). <br> Reaction: \(2H^+(aq) + 2e^- \rightarrow H_2(g)\). <br> Observation: Bubbles of colourless gas (hydrogen) evolve at the cathode.</p>
+                    <p><strong>Anode (+):</strong> Attracts \(OH^-\) and \(SO_4^{2-}\). OH⁻ is preferentially discharged over the stable sulfate ion (SO₄²⁻). <br> Reaction: \(4OH^-(aq) \rightarrow O_2(g) + 2H_2O(l) + 4e^-\) (or simplified from water: \(2H_2O(l) \rightarrow O_2(g) + 4H^+(aq) + 4e^-\)). <br> Observation: Bubbles of colourless gas (oxygen) evolve at the anode. Test: Relights a glowing splint.</p>
+                    <p>Overall Effect: Water is decomposed. Volume ratio of H₂:O₂ produced is 2:1. Acid concentration increases slightly as water is removed.</p>
+                </div>
+            </div>
+
+            <div class="syllabus-point">
+                <span class="core">4: State that metals or hydrogen are formed at the cathode and that non-metals (other than hydrogen) are formed at the anode</span>
+                 <p><strong>General Rule Summary (Inert Electrodes):</strong></p>
+                 <ul>
+                     <li><strong>At the Cathode (-):</strong> Always involves reduction (gain of electrons). Either <strong>metal ions</strong> are reduced to metal atoms (if metal is less reactive than hydrogen) OR <strong>hydrogen ions</strong> (from water or acid) are reduced to hydrogen gas (if metal is more reactive than hydrogen).</li>
+                     <li><strong>At the Anode (+):</strong> Always involves oxidation (loss of electrons). Either <strong>non-metal ions</strong> (like halides) are oxidised to the non-metal element OR <strong>hydroxide ions</strong> (from water) are oxidised to oxygen gas. (Certain complex ions like SO₄²⁻, NO₃⁻ are generally not discharged in aqueous solution).</li>
+                 </ul>
+             </div>
+
+             <div class="syllabus-point">
+                <span class="core">5: Predict the identity of the products at each electrode for the electrolysis of a binary compound in the molten state</span>
+                 <p>For a simple binary ionic compound (containing only two elements, one metal and one non-metal) in the <strong>molten</strong> state:</p>
+                 <ul>
+                    <li><strong>Cathode (-):</strong> The positive metal ion (cation) is reduced to the molten metal element. E.g., for molten MgCl₂, \(Mg^{2+} + 2e^- \rightarrow Mg(l)\).</li>
+                    <li><strong>Anode (+):</strong> The negative non-metal ion (anion) is oxidised to the non-metal element. E.g., for molten MgCl₂, \(2Cl^- \rightarrow Cl_2(g) + 2e^-\).</li>
+                 </ul>
+             </div>
+
+             <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">9: Identify the products formed at the electrodes and describe the observations made during the electrolysis of aqueous copper(II) sulfate using inert carbon / graphite electrodes and when using copper electrodes</span>
+                  <div class="interactive-section">
+                    <h4><i class="fas fa-exchange-alt"></i> Electrolysis of Aqueous Copper(II) Sulfate (CuSO₄(aq))</h4>
+                    <p>Electrolyte: Contains \(Cu^{2+}(aq)\) (blue ions), \(SO_4^{2-}(aq)\) (colourless), \(H^+(aq)\) (colourless), \(OH^-(aq)\) (colourless).</p>
+                    <div class="controls">
+                        <label for="electrodeType">Electrode Material:</label>
+                        <select id="electrodeType" onchange="showCuSO4Electrolysis()" aria-label="Select Electrode Material">
+                            <option value="inert" selected>Inert (Carbon/Graphite)</option>
+                            <option value="copper">Copper (Active)</option>
+                        </select>
+                    </div>
+                    <div class="output" id="cuso4Output">Results for Inert Electrodes shown below.</div>
+                </div>
+                 <div id="inertElectrodesInfo" class="example">
+                     <h5>Using Inert (Carbon/Graphite) Electrodes:</h5>
+                     <p><strong>Cathode (-):</strong> Attracts \(Cu^{2+}\) and \(H^+\). Cu is less reactive than H, so Cu²⁺ is preferentially discharged. <br> Reaction: \(Cu^{2+}(aq) + 2e^- \rightarrow Cu(s)\). <br> Observation: Pink/brown solid (copper) deposited on the cathode.</p>
+                     <p><strong>Anode (+):</strong> Attracts \(OH^-\) and \(SO_4^{2-}\). OH⁻ is discharged in preference to SO₄²⁻. <br> Reaction: \(4OH^-(aq) \rightarrow O_2(g) + 2H_2O(l) + 4e^-\). <br> Observation: Bubbles of colourless gas (oxygen) form at the anode.</p>
+                     <p><strong>Electrolyte Change:</strong> Blue colour fades as \(Cu^{2+}\) ions are removed. \(H^+\) and \(SO_4^{2-}\) ions remain/build up, making the solution acidic (sulfuric acid forms).</p>
+                 </div>
+                 <div id="copperElectrodesInfo" class="example" style="display: none;">
+                     <h5>Using Copper (Active) Electrodes:</h5>
+                     <p><strong>Cathode (-):</strong> Same as inert: Attracts \(Cu^{2+}\) and \(H^+\). Cu²⁺ is preferentially discharged. <br> Reaction: \(Cu^{2+}(aq) + 2e^- \rightarrow Cu(s)\). <br> Observation: Pink/brown solid (copper) deposited on the cathode.</p>
+                     <p><strong>Anode (+):</strong> Attracts \(OH^-\), \(SO_4^{2-}\), but the copper anode itself is easier to oxidise. <br> Reaction: \(Cu(s) \rightarrow Cu^{2+}(aq) + 2e^-\). <br> Observation: The copper anode dissolves/gets smaller.</p>
+                     <p><strong>Electrolyte Change:</strong> \(Cu^{2+}\) ions are removed at the cathode but replenished by the anode dissolving. Therefore, the concentration of \(Cu^{2+}\) (and the blue colour) remains approximately constant. Used for refining copper.</p>
+                 </div>
+             </div>
+
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">10: Predict the identity of the products at each electrode for the electrolysis of a halide compound in dilute or concentrated aqueous solution</span>
+                <h4>Predicting Products in Aqueous Halide Solutions</h4>
+                <ul>
+                    <li><strong>Cathode (-):</strong> Always compare the reactivity of the metal cation (from the halide salt) with Hydrogen (H⁺ from water).
+                        <ul><li>If Metal is MORE reactive than H (e.g., Na, K, Ca, Mg, Al, Zn, Fe): Hydrogen gas (H₂) is produced. \(2H^+(aq) + 2e^- \rightarrow H_2(g)\).</li><li>If Metal is LESS reactive than H (e.g., Cu, Ag, Au): The Metal is deposited. \( \text{Metal}^{n+}(aq) + ne^- \rightarrow \text{Metal}(s) \).</li></ul>
+                    </li>
+                    <li><strong>Anode (+):</strong> Compare the ease of discharge of the halide ion (X⁻) versus the hydroxide ion (OH⁻ from water).
+                        <ul>
+                            <li>If solution is <strong>CONCENTRATED</strong> Halide: The Halide ion (Cl⁻, Br⁻, I⁻) is usually discharged → Halogen gas (Cl₂, Br₂, I₂) forms. \(2X^-(aq) \rightarrow X_2(g/l/s) + 2e^-\).</li>
+                            <li>If solution is <strong>DILUTE</strong> Halide (or contains F⁻ or SO₄²⁻/NO₃⁻): Hydroxide ion (OH⁻) is discharged → Oxygen gas (O₂) forms. \(4OH^-(aq) \rightarrow O_2(g) + 2H_2O(l) + 4e^-\).</li>
+                            <li>(Note: Fluoride ions, F⁻, are very difficult to oxidise, so O₂ is always produced from aqueous fluoride solutions).</li>
+                        </ul>
+                    </li>
+                </ul>
+                 <div class="example">
+                     <p>E.g., Dilute aq. KBr: Cathode (K>H) → H₂ gas. Anode (Dilute Br⁻) → O₂ gas.</p>
+                     <p>E.g., Concentrated aq. KBr: Cathode (K>H) → H₂ gas. Anode (Conc. Br⁻) → Br₂ (liquid/gas).</p>
+                     <p>E.g., Concentrated aq. CuCl₂: Cathode (Cu<H) → Cu metal. Anode (Conc. Cl⁻) → Cl₂ gas.</p>
+                 </div>
+            </div>
+
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">11: Construct ionic half-equations for reactions at the anode (to show oxidation) and at the cathode (to show reduction)</span>
+                <h4>Constructing Ionic Half-Equations</h4>
+                <p>These equations show explicitly the species reacting and the electrons gained or lost.</p>
+                <ul><li>Balance atoms first.</li><li>Balance charge by adding electrons (e⁻) to the appropriate side.</li><li>Include state symbols.</li></ul>
+                <div class="example">
+                    <h4>Examples:</h4>
+                    <ul style="list-style-type: none; padding-left: 0;">
+                        <li><strong>Reduction at Cathode (-):</strong></li>
+                        <li>Lead ions: \(Pb^{2+}(l) + 2e^- \rightarrow Pb(l)\)</li>
+                        <li>Hydrogen ions: \(2H^{+}(aq) + 2e^- \rightarrow H_2(g)\)</li>
+                        <li>Copper(II) ions: \(Cu^{2+}(aq) + 2e^- \rightarrow Cu(s)\)</li>
+                        <li>Aluminium ions: \(Al^{3+}(l) + 3e^- \rightarrow Al(l)\)</li>
+                        <li><strong>Oxidation at Anode (+):</strong></li>
+                        <li>Bromide ions: \(2Br^-(l/aq) \rightarrow Br_2(g/l) + 2e^-\)</li>
+                        <li>Chloride ions: \(2Cl^-(aq) \rightarrow Cl_2(g) + 2e^-\)</li>
+                        <li>Hydroxide ions: \(4OH^-(aq) \rightarrow O_2(g) + 2H_2O(l) + 4e^-\)</li>
+                        <li>Copper metal (active anode): \(Cu(s) \rightarrow Cu^{2+}(aq) + 2e^-\)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="syllabus-point">
+                <span class="core">6: State that metal objects are electroplated to improve their appearance and resistance to corrosion</span><br>
+                <span class="core">7: Describe how metals are electroplated</span>
+                <h4>Electroplating</h4>
+                <p>Electroplating is a process that uses electrolysis to coat an object (usually metallic) with a thin layer of another metal.</p>
+                <p><strong>Purposes:</strong></p>
+                <ol>
+                    <li><strong>Improve Appearance:</strong> Make objects look more attractive (e.g., silver plating cutlery, chromium plating car parts).</li>
+                    <li><strong>Improve Corrosion Resistance:</strong> Protect the underlying metal from rusting or corroding (e.g., zinc plating steel - galvanising, chromium plating taps).</li>
+                </ol>
+                <p><strong>Method / Setup:</strong></p>
+                <ol>
+                    <li>The object to be plated is made the <strong>Cathode (-)</strong> of the electrolytic cell.</li>
+                    <li>The metal used for plating (e.g., silver, copper, chromium) is made the <strong>Anode (+)</strong> (this is an active electrode).</li>
+                    <li>The electrolyte is an aqueous solution containing ions of the plating metal (e.g., silver nitrate solution for silver plating, copper(II) sulfate solution for copper plating).</li>
+                    <li>A direct current is passed through the cell.</li>
+                </ol>
+                 <div class="example">
+                     <h4><i class="fas fa-spoon"></i> Silver plating an iron spoon</h4>
+                     <p>Setup: Iron Spoon = Cathode (-). Pure Silver Bar = Anode (+). Electrolyte = Silver Nitrate Solution (\(AgNO_3(aq)\)).</p>
+                     <p>Reactions:</p>
+                     <ul><li>Anode (+): Silver metal dissolves to form ions: \(Ag(s) \rightarrow Ag^{+}(aq) + e^-\).</li><li>Cathode (-): Silver ions from solution deposit onto the spoon: \(Ag^{+}(aq) + e^- \rightarrow Ag(s)\).</li></ul>
+                     <p>Result: The iron spoon gets coated with a layer of silver. The silver anode gradually dissolves, replenishing the silver ions in the electrolyte.</p>
+                 </div>
+            </div>
+        </section>
+
+        <section id="section-4-2">
+            <h2><i class="fas fa-gas-pump"></i> 4.2 Hydrogen–oxygen fuel cells</h2>
+
+            <div class="syllabus-point">
+                <span class="core">1: State that a hydrogen–oxygen fuel cell uses hydrogen and oxygen to produce electricity with water as the only chemical product</span>
+                <div class="definition">
+                    <strong>Hydrogen–Oxygen Fuel Cell:</strong> An electrochemical device that continuously converts the chemical energy from the reaction between hydrogen (\(H_2\)) and oxygen (\(O_2\)) directly into electricity. The only chemical product formed in the overall process is water (\(H_2O\)).
+                    <p>Overall Reaction: \(2H_2(g) + O_2(g) \rightarrow 2H_2O(l/g)\) + Electrical Energy</p>
+                    <p>(Note: The reactions occur via separate electrode processes involving ions and electrons, but the net result is the combination of H₂ and O₂ to form water).</p>
+                </div>
+            </div>
+
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">2: Describe the advantages and disadvantages of using hydrogen–oxygen fuel cells in comparison with gasoline / petrol engines in vehicles</span>
+                <h4>Fuel Cells vs. Petrol Engines Comparison</h4>
+                <table id="fuelCellComparisonTable">
+                    <thead><tr><th><i class="fas fa-charging-station"></i> Hydrogen-Oxygen Fuel Cell</th><th><i class="fas fa-car"></i> Gasoline/Petrol Engine</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td><!-- Fuel Cell -->
+                                <strong>Advantages:</strong>
+                                <ul><li><i class="fas fa-tint" style="color: var(--success-color);"></i> <strong>No Pollution at Source:</strong> Only water produced; no greenhouse gases (CO₂) or toxic pollutants (CO, NOx, particulates) emitted by the vehicle itself.</li><li><i class="fas fa-bolt" style="color: orange;"></i> <strong>High Efficiency:</strong> Convert chemical energy directly to electrical energy more efficiently than internal combustion engines (less energy wasted as heat).</li><li><i class="fas fa-volume-mute" style="color: blue;"></i> <strong>Quiet Operation:</strong> Less noise pollution.</li></ul>
+                                <strong>Disadvantages:</strong>
+                                <ul><li><i class="fas fa-industry" style="color: var(--error-color);"></i> <strong>Hydrogen Production:</strong> Most H₂ is currently made from fossil fuels (releasing CO₂) or requires significant electricity for electrolysis (which might come from fossil fuels). Truly 'green' H₂ is expensive.</li><li><i class="fas fa-database" style="color: var(--error-color);"></i> <strong>Hydrogen Storage:</strong> H₂ is a low-density gas, difficult and bulky to store safely on vehicles (requires high pressure tanks or very low temperatures).</li><li><i class="fas fa-dollar-sign" style="color: var(--error-color);"></i> <strong>Cost:</strong> Fuel cells often use expensive catalysts (like platinum) and the overall technology cost is high.</li><li><i class="fas fa-plug" style="color: var(--error-color);"></i> <strong>Infrastructure:</strong> Limited network of hydrogen refueling stations compared to petrol stations.</li></ul>
+                            </td>
+                            <td><!-- Petrol Engine -->
+                                <strong>Advantages:</strong>
+                                 <ul><li><i class="fas fa-cogs" style="color: grey;"></i> <strong>Mature Technology:</strong> Well-established manufacturing and repair infrastructure. Lower initial vehicle cost.</li><li><i class="fas fa-road" style="color: var(--primary-color);"></i> <strong>Extensive Refueling Infrastructure:</strong> Petrol stations are widespread.</li><li><i class="fas fa-gas-pump" style="color: var(--primary-color);"></i> <strong>Fuel Handling:</strong> Liquid petrol is relatively easy and safe to store and transport. High energy density per volume.</li></ul>
+                                 <strong>Disadvantages:</strong>
+                                <ul><li><i class="fas fa-smog" style="color: var(--error-color);"></i> <strong>Pollution:</strong> Produces greenhouse gases (CO₂), toxic pollutants (CO, NOx, unburnt hydrocarbons, particulates) contributing to air pollution and climate change.</li><li><i class="fas fa-thermometer-half" style="color: orange;"></i> <strong>Lower Efficiency:</strong> Significant energy loss as heat during combustion.</li><li><i class="fas fa-volume-up" style="color: grey;"></i> <strong>Noise Pollution.</strong></li><li><i class="fas fa-oil-can" style="color: var(--error-color);"></i> <strong>Finite Resource:</strong> Relies on non-renewable fossil fuels. Price volatility.</li></ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- AI Quiz Section -->
+        <section id="aiQuizSection">
+            <h3><i class="fas fa-question-circle"></i> AI Generated Quiz (Chapter 4)</h3>
+             <div id="apiKeyWarning" class="hidden alert alert-danger">
+                 <i class="fas fa-key"></i> <strong>API Key Needed:</strong> Please ensure the API key is correctly set in <code>js/common.js</code> to enable this feature.
+             </div>
+            <button id="generateQuizBtn" data-chapter-id="4">
+                <i class="fas fa-magic"></i> Generate Quiz Questions
+            </button>
+            <span id="quizLoading" class="loading-indicator hidden"> Generating... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizContainer" class="tex2jax_process"></div>
+            <button id="submitQuizBtn" class="hidden">
+                 <i class="fas fa-check"></i> Submit Answers for Marking
+            </button>
+            <span id="markingLoading" class="loading-indicator hidden"> Marking... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizFeedback" class="hidden tex2jax_process">
+                 <h4><i class="fas fa-marker"></i> AI Feedback</h4>
+                 <div id="feedbackContent"></div>
+            </div>
+        </section>
+
+        <!-- Bottom Page Navigation -->
+        <section class="page-navigation">
+            <a href="Chapter3.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Previous Chapter</a>
+            <a href="index.html" class="btn-nav btn-home"><i class="fas fa-home"></i> Home</a>
+            <a href="Chapter5.html" class="btn-nav btn-next">Next Chapter <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+    </div> <!-- End Container -->
+
+    <script src="js/common.js"></script>
+    <script src="js/quiz_prompts.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/chapter4.js"></script>
+</body>
+</html>

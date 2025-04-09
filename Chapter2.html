@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCSE Chemistry 0620: Chapter 2 - Atoms, Elements & Compounds</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        MathJax = {
+          tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$']], processEscapes: true },
+          svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div id="credits-banner">
+        <span>Developed by <strong>Raied</strong></span>
+        <a href="https://www.instagram.com/strange0g" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/stranger0g" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:superraied@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="container">
+        <h1><i class="fas fa-atom"></i> Chapter 2: Atoms, Elements and Compounds</h1>
+
+        <section id="section-2-1">
+            <h2><i class="fas fa-tags"></i> 2.1 Elements, Compounds and Mixtures</h2>
+            <div class="syllabus-point">
+                <span class="core">1. Describe the differences between elements, compounds and mixtures</span>
+                <table><thead><tr><th>Type</th><th>Definition</th><th>Composition</th><th>Bonding</th><th>Separation</th><th>Properties</th></tr></thead><tbody><tr><td><b class="term">Element</b></td><td>Pure substance, <b>one type of atom</b>. Cannot be broken down chemically.</td><td>One type of atom (e.g., Fe, O<sub>2</sub>).</td><td>Atoms may be unbonded or bonded to identical atoms.</td><td>Cannot separate chemically.</td><td>Unique props. Fixed MP/BP.</td></tr><tr><td><b class="term">Compound</b></td><td>Pure substance, <b>≥2 elements chemically bonded</b> in <b>fixed ratio</b>.</td><td>≥2 types of atoms chemically combined (e.g., H<sub>2</sub>O, NaCl).</td><td>Chemically bonded (ionic/covalent).</td><td>Chemical reactions only.</td><td>Different props from elements. Fixed MP/BP.</td></tr><tr><td><b class="term">Mixture</b></td><td><b>≥2 substances not chemically bonded</b>.</td><td>Elements/compounds physically mixed (e.g., air, salt water).</td><td>No chemical bonds between substances.</td><td>Physical means (filtration, distillation etc.).</td><td>Blend of component props. Variable composition. Melts/boils over range.</td></tr></tbody></table>
+            </div>
+        </section>
+
+        <section id="section-2-2">
+            <h2><i class="fas fa-microscope"></i> 2.2 Atomic Structure and the Periodic Table</h2>
+            <div class="syllabus-point">
+                 <span class="core">1. Describe the structure of the atom as a central nucleus containing neutrons and protons surrounded by electrons in shells</span>
+                 <p>Central <b class="term">nucleus</b> (containing protons & neutrons) surrounded by <b class="term">electrons</b> orbiting in specific energy levels or <b class="term">shells</b>.</p>
+            </div>
+            <div class="syllabus-point">
+                <span class="core">2. State the relative charges and relative masses of a proton, a neutron and an electron</span>
+                 <table><thead><tr><th>Particle</th><th>Symbol</th><th>Relative Mass</th><th>Relative Charge</th><th>Location</th></tr></thead><tbody><tr><td>Proton</td><td>p / p<sup>+</sup></td><td>1</td><td>+1</td><td>Nucleus</td></tr><tr><td>Neutron</td><td>n / n<sup>0</sup></td><td>1</td><td>0</td><td>Nucleus</td></tr><tr><td>Electron</td><td>e / e<sup>-</sup></td><td>~1/1840 (often taken as 0)</td><td>-1</td><td>Shells</td></tr></tbody></table>
+            </div>
+            <div class="syllabus-point">
+                 <span class="core">3. Define proton number / atomic number (Z) as the number of protons in the nucleus of an atom</span>
+                <p><b class="term">Proton number (Z)</b>: Number of protons in the nucleus. It uniquely identifies an element. In a neutral atom, the number of electrons equals the number of protons.</p>
+            </div>
+             <div class="syllabus-point">
+                 <span class="core">4. Define mass number / nucleon number (A) as the total number of protons and neutrons in the nucleus of an atom</span>
+                <p><b class="term">Mass number (A)</b>: Total number of protons + neutrons in the nucleus. \( A = Z + N \), where N is the number of neutrons. Therefore, the number of neutrons \(N = A - Z\).</p>
+            </div>
+
+            <div class="interactive-area">
+                <h3><i class="fas fa-tools"></i> Interactive Atom Builder (Elements 1-20)</h3>
+                <div class="controls">
+                    <label for="protons">Protons (Z):</label>
+                    <input type="number" id="protons" min="1" max="20" value="6" aria-label="Number of protons">
+                    <label for="neutrons">Neutrons:</label>
+                    <input type="number" id="neutrons" min="0" max="24" value="6" aria-label="Number of neutrons">
+                </div>
+                 <div id="atomVisualization">
+                    <div class="nucleus">
+                        <span id="protonDisplay">6p<sup>+</sup></span>
+                        <span id="neutronDisplay">6n<sup>0</sup></span>
+                    </div>
+                 </div>
+                <div class="output-area" id="atomInfo">Building atom...</div>
+            </div>
+
+             <div class="syllabus-point">
+                 <span class="core">5. Determine the electronic configuration of elements and their ions with proton number 1 to 20, e.g. 2,8,3</span>
+                 <p><b class="term">Electronic configuration</b>: Arrangement of electrons in shells.</p>
+                 <ul><li>Shells fill from inside: 1<sup>st</sup> shell (max 2 e<sup>-</sup>), 2<sup>nd</sup> shell (max 8 e<sup>-</sup>), 3<sup>rd</sup> shell (max 8 e<sup>-</sup> for Z≤20).</li></ul>
+                 <p>Examples (Neutral Atoms):</p>
+                 <ul><li>Li (Z=3): 2,1</li><li>Ne (Z=10): 2,8</li><li>Na (Z=11): 2,8,1</li><li>Ar (Z=18): 2,8,8</li><li>K (Z=19): 2,8,8,1</li><li>Ca (Z=20): 2,8,8,2</li></ul>
+                 <p>Ions: Formed to achieve a stable electron configuration (usually a full outer shell like noble gases).</p>
+                 <ul><li>Cations (+ve): Lose outer shell e<sup>-</sup>. E.g., Mg (2,8,2) loses 2e<sup>-</sup> → Mg<sup>2+</sup> ion (2,8).</li><li>Anions (-ve): Gain e<sup>-</sup> to fill outer shell. E.g., O (2,6) gains 2e<sup>-</sup> → O<sup>2-</sup> ion (2,8).</li></ul>
+             </div>
+
+            <div class="syllabus-point">
+                 <span class="core">6. State that: (a) Group VIII noble gases have a full outer shell (b) the number of outer shell electrons is equal to the group number in Groups I to VII (c) the number of occupied electron shells is equal to the period number</span>
+                 <ul><li>(a) Noble Gases (Group VIII/0): Have a full outer electron shell (2 for He, 8 for others up to Ar), making them very stable and unreactive.</li><li>(b) Groups I-VII: For elements in these groups, the Group Number = Number of electrons in the outer shell. (e.g., Group 1 metals have 1 outer e<sup>-</sup>, Group VII halogens have 7 outer e<sup>-</sup>).</li><li>(c) Period Number: The Period Number = Number of occupied electron shells. (e.g., Period 2 elements Li to Ne have 2 occupied shells, Period 3 elements Na to Ar have 3 occupied shells).</li></ul>
+            </div>
+        </section>
+
+        <section id="section-2-3">
+            <h2><i class="fas fa-clone"></i> 2.3 Isotopes</h2>
+             <div class="syllabus-point">
+                <span class="core">1. Define isotopes as different atoms of the same element that have the same number of protons but different numbers of neutrons</span>
+                <p><b class="term">Isotopes</b>: Atoms of the <b>same element</b> (meaning they have the same number of protons, Z) but with <b>different numbers of neutrons</b> (meaning they have different mass numbers, A).</p>
+                <p>Example: Hydrogen Isotopes - All have Z=1.</p>
+                <ul><li>Protium (\( ^{1}_{1}H \)): 1 proton, 0 neutrons.</li><li>Deuterium (\( ^{2}_{1}H \)): 1 proton, 1 neutron.</li><li>Tritium (\( ^{3}_{1}H \)): 1 proton, 2 neutrons.</li></ul>
+            </div>
+            <div class="syllabus-point">
+                 <span class="core">2. Interpret and use symbols for atoms, e.g. \( ^{12}_{6}\text{C} \), and ions, e.g. \( ^{35}_{17}\text{Cl}^- \)</span>
+                <p>Notation \( ^{A}_{Z}\text{X}^{\text{charge}} \):</p>
+                 <ul><li>A = Mass number (protons + neutrons) - Top left.</li><li>Z = Proton number (atomic number) - Bottom left.</li><li>X = Chemical symbol of the element.</li><li>Charge - Top right (omitted if neutral).</li></ul>
+                <p>Examples:</p>
+                 <ul><li>\( ^{12}_{6}\text{C} \): Carbon atom, 6 protons, (12-6)=6 neutrons, 6 electrons (neutral).</li><li>\( ^{37}_{17}\text{Cl} \): Chlorine atom, 17 protons, (37-17)=20 neutrons, 17 electrons (neutral).</li><li>\( ^{24}_{12}\text{Mg}^{2+} \): Magnesium ion, 12 protons, (24-12)=12 neutrons, (12-2)=10 electrons (+2 charge means 2 electrons lost).</li><li>\( ^{35}_{17}\text{Cl}^{-} \): Chloride ion, 17 protons, (35-17)=18 neutrons, (17+1)=18 electrons (-1 charge means 1 electron gained).</li></ul>
+            </div>
+            <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">3. State that isotopes of the same element have the same chemical properties because they have the same number of electrons and therefore the same electronic configuration</span>
+                 <p>Chemical properties are determined primarily by the arrangement of electrons, particularly the outer shell electrons. Since isotopes of an element have the same number of protons, they also have the same number of electrons and thus the same electronic configuration. This leads to identical chemical behavior.</p>
+                 <p>(Note: Physical properties like density or rate of diffusion may differ slightly due to the mass difference).</p>
+            </div>
+             <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">4. Calculate the relative atomic mass of an element from the relative masses and the relative abundances of its isotopes</span>
+                 <p><b class="term">Relative atomic mass (\(A_r\))</b>: The weighted average mass of the isotopes of an element relative to 1/12th of the mass of a carbon-12 atom.</p>
+                 <p>Calculation Formula:</p>
+                 $$ A_r = \frac{(\text{mass}_1 \times \% \text{abundance}_1) + (\text{mass}_2 \times \% \text{abundance}_2) + \dots}{100} $$
+                 <div class="example">
+                     <h4>Example: Chlorine Calculation</h4>
+                      <p>Chlorine exists as \( ^{35}\text{Cl} \) (75% abundance) and \( ^{37}\text{Cl} \) (25% abundance).</p>
+                      $$ A_r(Cl) = \frac{(35 \times 75) + (37 \times 25)}{100} = \frac{2625 + 925}{100} = \frac{3550}{100} = 35.5 $$
+                 </div>
+                  <div class="example">
+                     <h4>Example: Boron Calculation</h4>
+                      <p>Boron exists as \( ^{10}\text{B} \) (20% abundance) and \( ^{11}\text{B} \) (80% abundance).</p>
+                      $$ A_r(B) = \frac{(10 \times 20) + (11 \times 80)}{100} = \frac{200 + 880}{100} = \frac{1080}{100} = 10.8 $$
+                 </div>
+            </div>
+        </section>
+
+        <section id="section-2-4">
+            <h2><i class="fas fa-magnet"></i> 2.4 Ions and Ionic Bonds</h2>
+            <div class="syllabus-point">
+                <span class="core">1. Describe the formation of positive ions, known as cations, and negative ions, known as anions</span>
+                 <p>Ions are formed when atoms gain or lose electrons to achieve a stable electron configuration (usually a full outer shell).</p>
+                 <ul><li><b>Cations (Positive Ions):</b> Formed when metal atoms <strong>lose</strong> their outer shell electrons. They now have more protons (+) than electrons (-), resulting in a positive charge. E.g., Na (2,8,1) → Na<sup>+</sup> (2,8) + e<sup>-</sup>. Common cations: Group I (+1), Group II (+2), Al (+3).</li><li><b>Anions (Negative Ions):</b> Formed when non-metal atoms <strong>gain</strong> electrons to fill their outer shell. They now have more electrons (-) than protons (+), resulting in a negative charge. E.g., Cl (2,8,7) + e<sup>-</sup> → Cl<sup>-</sup> (2,8,8). Common anions: Group VI (-2), Group VII (-1).</li></ul>
+            </div>
+             <div class="syllabus-point">
+                 <span class="core">2. State that an ionic bond is a strong electrostatic attraction between oppositely charged ions</span>
+                 <p><b class="term">Ionic bond</b>: The strong <b>electrostatic force of attraction</b> that exists between <b>oppositely charged ions</b> (cations and anions) formed by the transfer of electrons.</p>
+            </div>
+            <div class="syllabus-point">
+                <span class="core">3. Describe the formation of ionic bonds between elements from Group I and Group VII, including the use of dot-and-cross diagrams</span>
+                 <p>Example: Sodium (Group I) reacts with Chlorine (Group VII).</p>
+                 <ol><li>Sodium atom (Na: 2,8,1) loses its one outer electron to become a stable sodium ion (Na<sup>+</sup>: 2,8).</li><li>Chlorine atom (Cl: 2,8,7) gains one electron to fill its outer shell, becoming a stable chloride ion (Cl<sup>-</sup>: 2,8,8).</li><li>The oppositely charged Na<sup>+</sup> and Cl<sup>-</sup> ions are strongly attracted to each other by electrostatic forces, forming the ionic bond in Sodium Chloride (NaCl).</li></ol>
+                 <h4>Dot-and-Cross Diagram: NaCl Formation (Outer Shells Only)</h4>
+                 <svg class="dot-cross-diagram" viewbox="0 0 460 130">
+                      <defs>
+                          <circle id="electronDotN" cx="0" cy="0" r="3.5" class="electron-dot"/>
+                          <g id="electronCrossN" class="electron-cross" stroke-width="1.5" fill="none">
+                              <line x1="-3" y1="-3" x2="3" y2="3"/> <line x1="-3" y1="3" x2="3" y2="-3"/>
+                          </g>
+                          <marker id="arrowheadN" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L10,3.5 L0,7 z" fill="#333"/></marker>
+                      </defs>
+                      <g transform="translate(60, 70)">
+                          <circle r="25" class="shell"/><text y="5" text-anchor="middle" class="symbol">Na</text>
+                          <use xlink:href="#electronDotN" x="0" y="-25"/>
+                          <text x="0" y="-60" class="label-text" text-anchor="middle">Na atom (2,8,1)</text>
+                      </g>
+                      <g transform="translate(180, 70)">
+                          <circle r="30" class="shell"/><text y="5" text-anchor="middle" class="symbol">Cl</text>
+                          <use xlink:href="#electronCrossN" x="0" y="-30"/> <use xlink:href="#electronCrossN" x="0" y="30"/>
+                          <use xlink:href="#electronCrossN" x="-26" y="-15"/> <use xlink:href="#electronCrossN" x="26" y="-15"/>
+                          <use xlink:href="#electronCrossN" x="-26" y="15"/> <use xlink:href="#electronCrossN" x="26" y="15"/>
+                          <use xlink:href="#electronCrossN" x="-30" y="0"/>
+                          <text x="0" y="-60" class="label-text" text-anchor="middle">Cl atom (2,8,7)</text>
+                      </g>
+                      <line x1="90" y1="45" x2="145" y2="55" stroke="#333" stroke-width="1.5" marker-end="url(#arrowheadN)"/>
+                      <text x="117.5" y="40" class="label-text" font-size="10px">Electron Transfer</text>
+                      <g transform="translate(305, 70)">
+                          <text x="-28" y="5" class="bracket">[</text>
+                          <circle r="20" class="shell"/><text y="5" text-anchor="middle" class="symbol">Na</text>
+                          <text x="28" y="5" class="bracket">]</text>
+                          <text x="36" y="-5" class="charge">+</text>
+                          <text x="0" y="-60" class="label-text" text-anchor="middle">Na⁺ ion [2,8]</text>
+                      </g>
+                      <g transform="translate(405, 70)">
+                          <text x="-40" y="5" class="bracket">[</text>
+                          <circle r="30" class="shell"/><text y="5" text-anchor="middle" class="symbol">Cl</text>
+                          <use xlink:href="#electronCrossN" x="0" y="-30"/> <use xlink:href="#electronCrossN" x="0" y="30"/>
+                          <use xlink:href="#electronCrossN" x="-26" y="-15"/> <use xlink:href="#electronCrossN" x="26" y="-15"/>
+                          <use xlink:href="#electronCrossN" x="-26" y="15"/> <use xlink:href="#electronCrossN" x="26" y="15"/>
+                          <use xlink:href="#electronCrossN" x="-30" y="0"/>
+                          <use xlink:href="#electronDotN" x="30" y="0"/>
+                          <text x="40" y="5" class="bracket">]</text>
+                          <text x="48" y="-5" class="charge">−</text>
+                          <text x="0" y="-60" class="label-text" text-anchor="middle">Cl⁻ ion [2,8,8]</text>
+                      </g>
+                      <text x="230" y="125" class="label-text" text-anchor="middle">(• = Na outer e⁻ ; x = Cl outer e⁻. Inner shells implied for ions)</text>
+                  </svg>
+            </div>
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">6. Describe the formation of ionic bonds between ions of metallic and non-metallic elements, including the use of dot-and-cross diagrams</span>
+                 <p>Ionic bonds generally form between metals (which lose electrons) and non-metals (which gain electrons).</p>
+                 <p>Example: Magnesium (Group II) and Oxygen (Group VI)</p>
+                 <ol><li>Mg (2,8,2) loses 2 outer e<sup>-</sup> → Mg<sup>2+</sup> (2,8).</li><li>O (2,6) gains 2 outer e<sup>-</sup> → O<sup>2-</sup> (2,8).</li><li>Ions Mg<sup>2+</sup> and O<sup>2-</sup> attract to form MgO.</li></ol>
+                  <h4>Dot-and-Cross Diagram: MgO Formation (Outer Shells Only)</h4>
+                   <svg class="dot-cross-diagram" viewbox="0 0 460 130">
+                      <defs>
+                           <!-- Re-use symbol defs -->
+                      </defs>
+                      <g transform="translate(60, 70)">
+                          <circle r="25" class="shell"/><text y="5" text-anchor="middle" class="symbol">Mg</text>
+                          <use xlink:href="#electronDotN" x="0" y="-25"/> <use xlink:href="#electronDotN" x="25" y="0"/>
+                          <text x="0" y="-60" class="label-text" text-anchor="middle">Mg atom (2,8,2)</text>
+                      </g>
+                      <g transform="translate(180, 70)">
+                          <circle r="30" class="shell"/><text y="5" text-anchor="middle" class="symbol">O</text>
+                          <use xlink:href="#electronCrossN" x="0" y="-30"/> <use xlink:href="#electronCrossN" x="0" y="30"/>
+                          <use xlink:href="#electronCrossN" x="-26" y="-15"/> <use xlink:href="#electronCrossN" x="26" y="-15"/>
+                          <use xlink:href="#electronCrossN" x="-30" y="0"/> <use xlink:href="#electronCrossN" x="30" y="0"/>
+                          <text x="0" y="-60" class="label-text" text-anchor="middle">O atom (2,6)</text>
+                      </g>
+                      <line x1="90" y1="45" x2="145" y2="55" stroke="#333" stroke-width="1.5" marker-end="url(#arrowheadN)"/>
+                      <text x="117.5" y="40" class="label-text" font-size="10px">2 Electrons Transfer</text>
+                      <g transform="translate(305, 70)">
+                          <text x="-28" y="5" class="bracket">[</text>
+                          <circle r="20" class="shell"/><text y="5" text-anchor="middle" class="symbol">Mg</text>
+                          <text x="28" y="5" class="bracket">]</text>
+                          <text x="36" y="-5" class="charge">2+</text>
+                          <text x="0" y="-60" class="label-text" text-anchor="middle">Mg²⁺ ion [2,8]</text>
+                      </g>
+                      <g transform="translate(405, 70)">
+                          <text x="-40" y="5" class="bracket">[</text>
+                          <circle r="30" class="shell"/><text y="5" text-anchor="middle" class="symbol">O</text>
+                          <use xlink:href="#electronCrossN" x="0" y="-30"/> <use xlink:href="#electronCrossN" x="0" y="30"/>
+                          <use xlink:href="#electronCrossN" x="-26" y="-15"/> <use xlink:href="#electronCrossN" x="26" y="-15"/>
+                          <use xlink:href="#electronCrossN" x="-30" y="0"/> <use xlink:href="#electronCrossN" x="30" y="0"/>
+                          <use xlink:href="#electronDotN" x="-15" y="26"/> <use xlink:href="#electronDotN" x="15" y="26"/>
+                          <text x="40" y="5" class="bracket">]</text>
+                          <text x="48" y="-5" class="charge">2−</text>
+                          <text x="0" y="-60" class="label-text" text-anchor="middle">O²⁻ ion [2,8]</text>
+                      </g>
+                      <text x="230" y="125" class="label-text" text-anchor="middle">(• = Mg outer e⁻ ; x = O outer e⁻)</text>
+                  </svg>
+                  <p>Example: Calcium (Group II) and Fluorine (Group VII)</p>
+                  <ol><li>Ca (2,8,8,2) loses 2 outer e<sup>-</sup> → Ca<sup>2+</sup> (2,8,8).</li><li>Each F (2,7) gains 1 outer e<sup>-</sup> → F<sup>-</sup> (2,8).</li><li>One Ca<sup>2+</sup> ion attracts two F<sup>-</sup> ions to form CaF<sub>2</sub>. Dot-and-cross diagram would show one Ca transferring one electron to each of two F atoms.</li></ol>
+            </div>
+             <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">5. Describe the giant lattice structure of ionic compounds as a regular arrangement of alternating positive and negative ions</span>
+                  <p><b class="term">Giant ionic lattice</b>: A regular, repeating three-dimensional arrangement of a very large number of alternating positive (cations) and negative (anions) ions, held together by strong electrostatic forces acting in all directions.</p>
+                 <div class="structure-visualization">
+                     <h4>Simplified Ionic Lattice (e.g., NaCl type)</h4>
+                     <svg viewBox="0 0 120 120" >
+                         <defs><circle id="cation2" cx="0" cy="0" r="8" class="positive-ion"/><circle id="anion2" cx="0" cy="0" r="12" class="negative-ion"/></defs>
+                         <use xlink:href="#cation2" x="20" y="20"/> <use xlink:href="#anion2" x="50" y="20"/> <use xlink:href="#cation2" x="80" y="20"/> <use xlink:href="#anion2" x="110" y="20"/>
+                         <use xlink:href="#anion2" x="20" y="50"/> <use xlink:href="#cation2" x="50" y="50"/> <use xlink:href="#anion2" x="80" y="50"/> <use xlink:href="#cation2" x="110" y="50"/>
+                         <use xlink:href="#cation2" x="20" y="80"/> <use xlink:href="#anion2" x="50" y="80"/> <use xlink:href="#cation2" x="80" y="80"/> <use xlink:href="#anion2" x="110" y="80"/>
+                         <use xlink:href="#anion2" x="20" y="110"/> <use xlink:href="#cation2" x="50" y="110"/> <use xlink:href="#anion2" x="80" y="110"/> <use xlink:href="#cation2" x="110" y="110"/>
+                     </svg>
+                     <p>Simplified 2D view showing regular alternating positive and negative ions.</p>
+                 </div>
+            </div>
+             <div class="syllabus-point">
+                 <span class="core">4. Describe the properties of ionic compounds: (a) high melting points and boiling points (b) good electrical conductivity when aqueous or molten and poor when solid</span>
+                 <ul><li><b>(a) High Melting/Boiling Points:</b> Ionic compounds are typically solids at room temperature with very high melting and boiling points.</li><li><b>(b) Electrical Conductivity:</b> They conduct electricity when <strong>molten</strong> (liquid) or <strong>dissolved in water</strong> (aqueous), because the ions are free to move and carry charge. They do <strong>not</strong> conduct electricity when <strong>solid</strong>, because the ions are held in fixed positions within the lattice.</li><li>Usually crystalline solids, often soluble in water (polar solvent).</li></ul>
+             </div>
+             <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">7. Explain the properties of ionic compounds in terms of structure and bonding: (a) high melting points and boiling points (b) good electrical conductivity when aqueous or molten and poor when solid</span>
+                 <ul><li><b>(a) High MP/BP Explained:</b> A large amount of thermal energy is required to overcome the strong, multi-directional electrostatic forces of attraction between the oppositely charged ions throughout the giant ionic lattice.</li><li><b>(b) Electrical Conductivity Explained:</b> Conduction requires mobile charge carriers. In solid ionic compounds, ions are fixed in the lattice and cannot move. When molten or dissolved, the ions become mobile and can move towards the electrodes, carrying charge and allowing conduction.</li></ul>
+             </div>
+        </section>
+
+        <section id="section-2-5">
+            <h2><i class="fas fa-share-alt"></i> 2.5 Simple Molecules and Covalent Bonds</h2>
+            <div class="syllabus-point">
+                <span class="core">1. State that a covalent bond is formed when a pair of electrons is shared between two atoms leading to noble gas electronic configurations</span>
+                <p><b class="term">Covalent bond</b>: A chemical bond formed by the <b>sharing of one or more pairs of electrons</b> (usually between non-metal atoms) so that each atom achieves a stable electron configuration, often resembling that of a noble gas (e.g., a full outer shell).</p>
+            </div>
+            <div class="syllabus-point">
+                <span class="core">2. Describe the formation of covalent bonds in simple molecules, including H₂, Cl₂, H₂O, CH₄, NH₃ and HCl. Use dot-and-cross diagrams to show the electronic configurations in these and similar molecules</span>
+                <p>Atoms joined covalently form <b class="term">molecules</b>. <b class="term">Simple molecules</b> contain a small, fixed number of atoms.</p>
+                <p>Examples & Dot-and-Cross (Outer Shells):</p>
+                 <div class="dot-cross-gallery">
+                     <div class="diagram-item"><span>H₂ (H-H)</span><svg class="dot-cross-diagram" viewbox="0 0 80 50"><g transform="translate(25, 25)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronDotN" x="9" y="0"/></g><g transform="translate(55, 25)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="-9" y="0"/></g></svg></div>
+                     <div class="diagram-item"><span>Cl₂ (Cl-Cl)</span><svg class="dot-cross-diagram" viewbox="0 0 120 70"><g transform="translate(35,35)"><circle r="25" class="shell"/><text y="4" text-anchor="middle" class="symbol">Cl</text><use xlink:href="#electronDotN" y="-25"/><use xlink:href="#electronDotN" y="25"/><use xlink:href="#electronDotN" x="-21.6" y="-12.5"/><use xlink:href="#electronDotN" x="-21.6" y="12.5"/><use xlink:href="#electronDotN" x="21.6" y="-12.5"/><use xlink:href="#electronDotN" x="21.6" y="12.5"/><use xlink:href="#electronDotN" x="25" y="0"/></g><g transform="translate(85,35)"><circle r="25" class="shell"/><text y="4" text-anchor="middle" class="symbol">Cl</text><use xlink:href="#electronCrossN" y="-25"/><use xlink:href="#electronCrossN" y="25"/><use xlink:href="#electronCrossN" x="-21.6" y="-12.5"/><use xlink:href="#electronCrossN" x="-21.6" y="12.5"/><use xlink:href="#electronCrossN" x="21.6" y="-12.5"/><use xlink:href="#electronCrossN" x="21.6" y="12.5"/><use xlink:href="#electronCrossN" x="-25" y="0"/></g></svg></div>
+                     <div class="diagram-item"><span>H₂O</span><svg class="dot-cross-diagram" viewbox="0 0 120 90"><g transform="translate(60, 45)"><circle r="28" class="shell"/><text y="5" text-anchor="middle" class="symbol">O</text><use xlink:href="#electronDotN" x="-14" y="-24.2"/><use xlink:href="#electronDotN" x="14" y="-24.2"/><use xlink:href="#electronDotN" x="-28" y="0"/><use xlink:href="#electronDotN" x="28" y="0"/><use xlink:href="#electronDotN" x="-12" y="25"/> <use xlink:href="#electronDotN" x="12" y="25"/></g><g transform="translate(25, 70)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="9" y="-7"/></g><g transform="translate(95, 70)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="-9" y="-7"/></g></svg></div>
+                     <div class="diagram-item"><span>CH₄</span><svg class="dot-cross-diagram" viewbox="0 0 110 110"><g transform="translate(55, 55)"><circle r="22" class="shell"/><text y="5" text-anchor="middle" class="symbol">C</text><use xlink:href="#electronDotN" x="0" y="-17"/><use xlink:href="#electronDotN" x="0" y="17"/><use xlink:href="#electronDotN" x="-17" y="0"/><use xlink:href="#electronDotN" x="17" y="0"/></g><g transform="translate(55, 20)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="0" y="9"/></g><g transform="translate(55, 90)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="0" y="-9"/></g><g transform="translate(20, 55)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="9" y="0"/></g><g transform="translate(90, 55)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="-9" y="0"/></g></svg></div>
+                     <div class="diagram-item"><span>NH₃</span><svg class="dot-cross-diagram" viewbox="0 0 110 100"><g transform="translate(55, 50)"><circle r="28" class="shell"/><text y="5" text-anchor="middle" class="symbol">N</text><use xlink:href="#electronDotN" x="0" y="-22"/> <use xlink:href="#electronDotN" x="0" y="-14"/> <use xlink:href="#electronDotN" x="-23" y="15"/><use xlink:href="#electronDotN" x="0" y="25"/><use xlink:href="#electronDotN" x="23" y="15"/></g><g transform="translate(20, 80)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="8" y="-6"/></g><g transform="translate(55, 80)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="0" y="-9"/></g><g transform="translate(90, 80)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronCrossN" x="-8" y="-6"/></g></svg></div>
+                     <div class="diagram-item"><span>HCl</span><svg class="dot-cross-diagram" viewbox="0 0 110 70"><g transform="translate(30, 35)"><circle r="12" class="shell"/><text y="4" text-anchor="middle" class="symbol">H</text><use xlink:href="#electronDotN" x="9" y="0"/></g><g transform="translate(75, 35)"><circle r="25" class="shell"/><text y="4" text-anchor="middle" class="symbol">Cl</text><use xlink:href="#electronCrossN" y="-25"/><use xlink:href="#electronCrossN" y="25"/><use xlink:href="#electronCrossN" x="-21.6" y="-12.5"/><use xlink:href="#electronCrossN" x="21.6" y="-12.5"/><use xlink:href="#electronCrossN" x="-21.6" y="12.5"/><use xlink:href="#electronCrossN" x="21.6" y="12.5"/><use xlink:href="#electronCrossN" x="-23" y="0"/></g></svg></div>
+                 </div>
+                 <p class="diagram-caption">(• = electron from first atom shown ; x = electron from second atom shown)</p>
+            </div>
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">4. Describe the formation of covalent bonds in molecules including CH₃OH, C₂H₄, O₂, CO₂ and N₂. Use dot-and-cross diagrams...</span>
+                <p>Covalent bonds can be single, double, or triple:</p>
+                <ul><li><b>Single Bond:</b> One shared pair (e.g., H-H, C-H, H-Cl).</li><li><b>Double Bond:</b> Two shared pairs (e.g., O=O in O₂, C=O in CO₂, C=C in C₂H₄).</li><li><b>Triple Bond:</b> Three shared pairs (e.g., N≡N in N₂).</li></ul>
+                 <p>Examples & Dot-and-Cross (Outer Shells):</p>
+                 <div class="dot-cross-gallery">
+                     <div class="diagram-item"><span>O₂ (O=O)</span><svg class="dot-cross-diagram" viewbox="0 0 110 70"><g transform="translate(30,35)"><circle r="25" class="shell"/><text y="4" text-anchor="middle" class="symbol">O</text><use xlink:href="#electronDotN" y="-25"/><use xlink:href="#electronDotN" y="25"/><use xlink:href="#electronDotN" x="-21.6" y="-12.5"/><use xlink:href="#electronDotN" x="-21.6" y="12.5"/><use xlink:href="#electronDotN" x="23" y="-8"/> <use xlink:href="#electronDotN" x="23" y="8"/></g><g transform="translate(80,35)"><circle r="25" class="shell"/><text y="4" text-anchor="middle" class="symbol">O</text><use xlink:href="#electronCrossN" y="-25"/><use xlink:href="#electronCrossN" y="25"/><use xlink:href="#electronCrossN" x="21.6" y="-12.5"/><use xlink:href="#electronCrossN" x="21.6" y="12.5"/><use xlink:href="#electronCrossN" x="-23" y="-8"/> <use xlink:href="#electronCrossN" x="-23" y="8"/></g></svg></div>
+                     <div class="diagram-item"><span>N₂ (N≡N)</span><svg class="dot-cross-diagram" viewbox="0 0 110 70"><g transform="translate(30,35)"><circle r="25" class="shell"/><text y="4" text-anchor="middle" class="symbol">N</text><use xlink:href="#electronDotN" y="-25"/> <use xlink:href="#electronDotN" y="25"/><use xlink:href="#electronDotN" x="22" y="-10"/><use xlink:href="#electronDotN" x="22" y="0"/><use xlink:href="#electronDotN" x="22" y="10"/></g><g transform="translate(80,35)"><circle r="25" class="shell"/><text y="4" text-anchor="middle" class="symbol">N</text><use xlink:href="#electronCrossN" y="-25"/><use xlink:href="#electronCrossN" y="25"/><use xlink:href="#electronCrossN" x="-22" y="-10"/><use xlink:href="#electronCrossN" x="-22" y="0"/><use xlink:href="#electronCrossN" x="-22" y="10"/></g></svg></div>
+                 </div>
+                 <p class="diagram-caption">Dot-and-cross for CO₂, C₂H₄, CH₃OH follow similar principles but can become cluttered. Structural formulae are often clearer for larger molecules.</p>
+            </div>
+            <div class="syllabus-point">
+                <span class="core">3. Describe in terms of structure and bonding the properties of simple molecular compounds: (a) low melting points and boiling points (b) poor electrical conductivity</span>
+                <ul><li><b>(a) Low Melting/Boiling Points:</b> Simple molecular substances (e.g., H₂O, CO₂, CH₄) have low MP/BPs because only weak forces between the molecules (<b class="term">intermolecular forces</b>) need to be overcome, not the strong covalent bonds within the molecules.</li><li><b>(b) Poor Electrical Conductivity:</b> They do not conduct electricity in any state because they consist of neutral molecules and lack mobile ions or delocalised electrons to carry charge.</li></ul>
+            </div>
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">5. Explain in terms of structure and bonding the properties of simple molecular compounds: (a) low melting points and boiling points in terms of weak intermolecular forces (specific types of intermolecular forces are not required) (b) poor electrical conductivity</span>
+                <ul><li><b>(a) Low MP/BP Explained:</b> The forces of attraction *between* simple molecules (intermolecular forces) are much weaker than the strong covalent bonds *within* the molecules. Melting and boiling involve overcoming these weak intermolecular forces, which requires relatively little energy.</li><li><b>(b) Poor Conductivity Explained:</b> Simple molecular compounds consist of discrete, neutral molecules. There are no free-moving ions or delocalised electrons available to move through the substance and carry an electrical current.</li></ul>
+            </div>
+        </section>
+
+        <section id="section-2-6">
+            <h2><i class="fas fa-project-diagram"></i> 2.6 Giant Covalent Structures</h2>
+             <p><b class="term">Giant covalent structures</b> (also called macromolecules or giant molecular structures): Substances where a very large number of atoms are joined together by a network of strong covalent bonds, forming a crystal lattice.</p>
+             <div class="syllabus-point">
+                <span class="core">1. Describe the giant covalent structures of graphite and diamond</span>
+                <ul><li><b>Diamond:</b> Each carbon atom is covalently bonded to <strong>four</strong> other carbon atoms in a <strong>tetrahedral</strong> arrangement. This forms a rigid, strong, three-dimensional network.</li><li><b>Graphite:</b> Each carbon atom is covalently bonded to <strong>three</strong> other carbon atoms, forming interconnected hexagonal rings in <strong>layers</strong>. Within each layer, there are strong covalent bonds. One electron per carbon atom is <span class="tooltip">delocalised<span class="tooltiptext">Free to move throughout the layer.</span></span>. There are only weak forces (intermolecular forces) between the layers.</li></ul>
+            </div>
+             <div class="syllabus-point">
+                 <span class="core">2. Relate the structures and bonding of graphite and diamond to their uses, limited to: (a) graphite as a lubricant and as an electrode (b) diamond in cutting tools</span>
+                 <div class="structure-gallery">
+                    <div class="structure-visualization">
+                        <h4>Diamond</h4>
+                        <svg viewBox="-10 -10 120 130"> <defs><circle id="c-atom-d" r="8" class="atom-c"/></defs> <use xlink:href="#c-atom-d" x="50" y="50"/> <line x1="50" y1="50" x2="50" y2="10" class="covalent-bond"/> <line x1="50" y1="50" x2="15" y2="70" class="covalent-bond"/> <line x1="50" y1="50" x2="85" y2="70" class="covalent-bond"/> <line x1="50" y1="50" x2="50" y2="90" class="covalent-bond" stroke-dasharray="4,2"/> <use xlink:href="#c-atom-d" x="50" y="10"/> <use xlink:href="#c-atom-d" x="15" y="70"/> <use xlink:href="#c-atom-d" x="85" y="70"/> <use xlink:href="#c-atom-d" x="50" y="90"/> </svg>
+                        <p>Strong 3D covalent network.</p>
+                        <ul><li><b>Property:</b> Very hard, high MP/BP, non-conductor.</li><li><b>Use:</b> <i class="fas fa-gem"></i> Cutting tools, drill tips (due to hardness).</li></ul>
+                    </div>
+                    <div class="structure-visualization">
+                        <h4>Graphite</h4>
+                         <svg viewBox="0 0 160 120"> <defs><circle id="c-atom-g" r="5" class="atom-c"/></defs> <polygon points="60,30 80,30 90,47.3 80,64.6 60,64.6 50,47.3" fill="none" class="covalent-bond"/> <polygon points="100,30 120,30 130,47.3 120,64.6 100,64.6 90,47.3" fill="none" class="covalent-bond"/> <use xlink:href="#c-atom-g" x="60" y="30"/> <use xlink:href="#c-atom-g" x="80" y="30"/> <use xlink:href="#c-atom-g" x="100" y="30"/> <use xlink:href="#c-atom-g" x="120" y="30"/> <use xlink:href="#c-atom-g" x="50" y="47.3"/> <use xlink:href="#c-atom-g" x="70" y="47.3"/> <use xlink:href="#c-atom-g" x="90" y="47.3"/> <use xlink:href="#c-atom-g" x="110" y="47.3"/> <use xlink:href="#c-atom-g" x="130" y="47.3"/> <use xlink:href="#c-atom-g" x="60" y="64.6"/> <use xlink:href="#c-atom-g" x="80" y="64.6"/> <use xlink:href="#c-atom-g" x="100" y="64.6"/> <use xlink:href="#c-atom-g" x="120" y="64.6"/> <g opacity="0.6" transform="translate(15, 40)"> <polygon points="60,30 80,30 90,47.3 80,64.6 60,64.6 50,47.3" fill="none" class="covalent-bond"/> <polygon points="100,30 120,30 130,47.3 120,64.6 100,64.6 90,47.3" fill="none" class="covalent-bond"/> <use xlink:href="#c-atom-g" x="60" y="30"/> <use xlink:href="#c-atom-g" x="80" y="30"/> <use xlink:href="#c-atom-g" x="100" y="30"/> <use xlink:href="#c-atom-g" x="120" y="30"/> <use xlink:href="#c-atom-g" x="50" y="47.3"/> <use xlink:href="#c-atom-g" x="70" y="47.3"/> <use xlink:href="#c-atom-g" x="90" y="47.3"/> <use xlink:href="#c-atom-g" x="110" y="47.3"/> <use xlink:href="#c-atom-g" x="130" y="47.3"/> <use xlink:href="#c-atom-g" x="60" y="64.6"/> <use xlink:href="#c-atom-g" x="80" y="64.6"/> <use xlink:href="#c-atom-g" x="100" y="64.6"/> <use xlink:href="#c-atom-g" x="120" y="64.6"/> </g> <line x1="70" y1="47.3" x2="85" y2="70" class="layer-bond"/> <line x1="110" y1="47.3" x2="125" y2="70" class="layer-bond"/> <line x1="90" y1="47.3" x2="105" y2="70" class="layer-bond"/> </svg>
+                        <p>Layered structure. Strong bonds within layers, weak forces between. Delocalised electrons.</p>
+                        <ul><li><b>Property:</b> Soft/slippery, high MP/BP, conducts electricity.</li><li><b>Use:</b> <i class="fas fa-oil-can"></i> Lubricant (layers slide), <i class="fas fa-plug"></i> Electrodes (conducts electricity via delocalised e<sup>-</sup>).</li></ul>
+                    </div>
+                 </div>
+            </div>
+             <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">3. Describe the giant covalent structure of silicon(IV) oxide, SiO₂</span>
+                <p><b class="term">Silicon(IV) oxide</b> (also known as silica or quartz, formula SiO₂): Forms a giant covalent structure similar to diamond.</p>
+                 <ul><li>Each silicon (Si) atom is covalently bonded to <strong>four</strong> oxygen (O) atoms in a tetrahedral shape.</li><li>Each oxygen (O) atom acts as a bridge, bonding to <strong>two</strong> silicon (Si) atoms.</li><li>This creates a strong, rigid, repeating tetrahedral 3D network structure (similar arrangement to diamond, but with alternating Si and O atoms).</li></ul>
+                 <div class="structure-visualization">
+                     <h4>SiO₂ Structure (Local Unit)</h4>
+                     <svg viewBox="0 0 120 100">
+                         <defs><circle id="si-atom" r="10" class="atom-si"/><circle id="o-atom" r="7" class="atom-o"/></defs>
+                         <use xlink:href="#si-atom" x="60" y="50"/>
+                         <use xlink:href="#o-atom" x="60" y="15"/>
+                         <use xlink:href="#o-atom" x="25" y="65"/>
+                         <use xlink:href="#o-atom" x="95" y="65"/>
+                         <use xlink:href="#o-atom" x="60" y="85"/>
+                         <line x1="60" y1="50" x2="60" y2="15" class="covalent-bond"/>
+                         <line x1="60" y1="50" x2="25" y2="65" class="covalent-bond"/>
+                         <line x1="60" y1="50" x2="95" y2="65" class="covalent-bond"/>
+                         <line x1="60" y1="50" x2="60" y2="85" class="covalent-bond" stroke-dasharray="4,2"/>
+                     </svg>
+                     <p>Tetrahedral Si-O network (repeats throughout structure).</p>
+                 </div>
+            </div>
+             <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">4. Describe the similarity in properties between diamond and silicon(IV) oxide, related to their structures</span>
+                 <p>Both Diamond (C) and Silicon(IV) oxide (SiO₂) have giant covalent structures with strong covalent bonds extending throughout a 3D network. This similar structure leads to similar physical properties:</p>
+                 <ul><li>Very <strong>hard</strong> materials (strong bonds difficult to break/distort).</li><li>Very <strong>high melting points and boiling points</strong> (a large amount of energy is needed to break the strong covalent bonds throughout the lattice).</li><li>Do <strong>not conduct electricity</strong> (all electrons are localised in covalent bonds, no mobile ions or delocalised electrons).</li><li>Generally <strong>insoluble</strong> in water and most other solvents.</li></ul>
+             </div>
+        </section>
+
+        <section id="section-2-7">
+            <h2><i class="fas fa-coins"></i> 2.7 Metallic Bonding (Supplement)</h2>
+            <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">1. Describe metallic bonding as the electrostatic attraction between the positive ions in a giant metallic lattice and a ‘sea’ of delocalised electrons</span>
+                <p><b class="term">Metallic bonding</b>: The strong electrostatic force of attraction between a regular lattice (grid-like structure) of <b>positive metal ions</b> and the surrounding 'sea' of <b>delocalised electrons</b>. These delocalised electrons originated from the outer shells of the metal atoms and are free to move throughout the entire metallic structure.</p>
+                <div class="structure-visualization"> <h4>Metallic Bonding Model</h4> <svg viewBox="0 0 150 100"> <defs><circle id="met-ion" r="10" class="metal-ion"/><circle id="deloc-e" r="3" class="delocalized-electron"/></defs> <use xlink:href="#met-ion" x="20" y="20"/> <use xlink:href="#met-ion" x="60" y="20"/> <use xlink:href="#met-ion" x="100" y="20"/> <use xlink:href="#met-ion" x="140" y="20"/> <use xlink:href="#met-ion" x="20" y="50"/> <use xlink:href="#met-ion" x="60" y="50"/> <use xlink:href="#met-ion" x="100" y="50"/> <use xlink:href="#met-ion" x="140" y="50"/> <use xlink:href="#met-ion" x="20" y="80"/> <use xlink:href="#met-ion" x="60" y="80"/> <use xlink:href="#met-ion" x="100" y="80"/> <use xlink:href="#met-ion" x="140" y="80"/> <use xlink:href="#deloc-e" x="40" y="15"/> <use xlink:href="#deloc-e" x="80" y="25"/> <use xlink:href="#deloc-e" x="120" y="12"/> <use xlink:href="#deloc-e" x="30" y="35"/> <use xlink:href="#deloc-e" x="70" y="45"/> <use xlink:href="#deloc-e" x="115" y="38"/> <use xlink:href="#deloc-e" x="135" y="55"/> <use xlink:href="#deloc-e" x="45" y="65"/> <use xlink:href="#deloc-e" x="90" y="75"/> <use xlink:href="#deloc-e" x="125" y="68"/> <use xlink:href="#deloc-e" x="35" y="88"/> <use xlink:href="#deloc-e" x="75" y="92"/> <use xlink:href="#deloc-e" x="110" y="85"/> <text x="20" y="23" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="60" y="23" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="100" y="23" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="140" y="23" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="20" y="53" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="60" y="53" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="100" y="53" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="140" y="53" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="20" y="83" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="60" y="83" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="100" y="83" font-size="10" text-anchor="middle" fill="#424242">+</text> <text x="140" y="83" font-size="10" text-anchor="middle" fill="#424242">+</text> </svg> <p>Positive ions in regular lattice, surrounded by mobile delocalised electrons.</p> </div>
+            </div>
+            <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">2. Explain in terms of structure and bonding the properties of metals: (a) good electrical conductivity (b) malleability and ductility</span>
+                <ul><li><b>(a) Good Electrical Conductivity Explained:</b> The delocalised electrons are free to move throughout the metallic lattice. When a voltage is applied, these mobile electrons drift towards the positive terminal, carrying charge and allowing the metal to conduct electricity (and also heat).</li><li><b>(b) Malleability and Ductility Explained:</b> Malleable = can be hammered into shape; Ductile = can be drawn into wires. In a metal, the layers of positive ions can slide over one another when a force is applied without breaking the metallic bond, because the delocalised electrons can move to maintain the electrostatic attraction between the layers. This allows the metal to change shape without shattering (unlike ionic or giant covalent structures).</li></ul>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h2><i class="fas fa-list-alt"></i> Chapter 2 Summary</h2>
+            <h4>Elements, Compounds, Mixtures</h4><ul><li><b>Element:</b> 1 type atom. <b>Compound:</b> ≥2 elements bonded fixed ratio. <b>Mixture:</b> Not bonded, variable ratio.</li></ul>
+            <h4>Atomic Structure</h4><ul><li>Atom: Nucleus (protons, neutrons) + electrons (shells). p(1,+1), n(1,0), e(~0,-1).</li><li>Z=num protons. A=num protons+num neutrons. Neutral: num electrons = num protons. Config (Z≤20): 2,8,8... Group = outer electrons, Period = num shells.</li></ul>
+            <h4>Isotopes</h4><ul><li>Same Z, different num neutrons (different A). Notation: \(^{A}_{Z}\text{X}^{\text{charge}}\). Same chemical props (same electron config). \(A_r = \frac{\sum (\text{mass} \times \%)}{100}\).</li></ul>
+            <h4>Ionic Bonding</h4><ul><li>Metal loses electrons → cation(+). Non-metal gains electrons → anion(-). Strong electrostatic attraction. Giant lattice structure. High MP/BP. Conducts electricity when molten/aqueous (mobile ions).</li></ul>
+            <h4>Covalent Bonding</h4><ul><li>Shared electron pair(s). Simple molecules (H₂O, CO₂, CH₄...). Low MP/BP (weak intermolecular forces overcome). Poor conductor (no mobile charges).</li></ul>
+            <h4>Giant Covalent</h4><ul><li>Network of atoms, strong covalent bonds. High MP/BP. Diamond (C, hard, insulator, cutting). Graphite (C, layers, conducts, lubricant, electrodes). SiO₂ (similar to diamond props).</li></ul>
+            <h4>Metallic Bonding (Supp)</h4><ul><li>Lattice positive ions + delocalised electron sea. Good conductor (mobile electrons). Malleable/ductile (layers slide, electrons adapt).</li></ul>
+        </section>
+
+        <!-- AI Quiz Section -->
+        <section id="aiQuizSection">
+            <h3><i class="fas fa-question-circle"></i> AI Generated Quiz (Chapter 2)</h3>
+             <div id="apiKeyWarning" class="hidden alert alert-danger">
+                 <i class="fas fa-key"></i> <strong>API Key Needed:</strong> Please ensure the API key is correctly set in <code>js/common.js</code> to enable this feature.
+             </div>
+            <button id="generateQuizBtn" data-chapter-id="2">
+                <i class="fas fa-magic"></i> Generate Quiz Questions
+            </button>
+            <span id="quizLoading" class="loading-indicator hidden"> Generating... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizContainer" class="tex2jax_process"></div>
+            <button id="submitQuizBtn" class="hidden">
+                 <i class="fas fa-check"></i> Submit Answers for Marking
+            </button>
+            <span id="markingLoading" class="loading-indicator hidden"> Marking... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizFeedback" class="hidden tex2jax_process">
+                 <h4><i class="fas fa-marker"></i> AI Feedback</h4>
+                 <div id="feedbackContent"></div>
+            </div>
+        </section>
+
+
+        <!-- Bottom Page Navigation -->
+        <section class="page-navigation">
+            <a href="Chapter1.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Previous Chapter</a>
+            <a href="index.html" class="btn-nav btn-home"><i class="fas fa-home"></i> Home</a>
+            <a href="Chapter3.html" class="btn-nav btn-next">Next Chapter <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+    </div> <!-- End Container -->
+
+    <script src="js/common.js"></script>
+    <script src="js/quiz_prompts.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/chapter2.js"></script>
+</body>
+</html>

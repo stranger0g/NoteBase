@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCSE Chemistry 0620 - Chapter 3: Stoichiometry</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        MathJax = {
+          tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$']], processEscapes: true, tags: 'ams' },
+          svg: { fontCache: 'global' },
+          options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'], ignoreHtmlClass: 'tex2jax_ignore', processHtmlClass: 'tex2jax_process' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+
+    <div id="credits-banner">
+        <span>Developed by <strong>Raied</strong></span>
+        <a href="https://www.instagram.com/strange0g" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/stranger0g" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:superraied@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="container">
+        <h1><i class="fas fa-calculator"></i> Chapter 3: Stoichiometry</h1>
+
+        <section id="section-3-1">
+            <h2><i class="fas fa-superscript"></i> 3.1 Formulae</h2>
+             <div class="syllabus-point">
+                <span class="core">1: State the formulae of the elements and compounds named in the subject content</span><br>
+                <span class="core">2: Define the molecular formula of a compound as the number and type of different atoms in one molecule</span>
+            </div>
+            <p>Chemical formulae use symbols for elements and specify the number of atoms of each element in a substance.</p>
+             <ul>
+                <li><strong>Elements:</strong> Most exist as single atoms (monatomic, e.g., He, Fe, Cu). Some exist as molecules (Diatomic: \(H_2, N_2, O_2, F_2, Cl_2, Br_2, I_2\); Polyatomic: \(P_4, S_8\)).</li>
+                <li><strong>Common Compounds:</strong> Water (\(H_2O\)), Carbon Dioxide (\(CO_2\)), Ammonia (\(NH_3\)), Methane (\(CH_4\)), Hydrogen Chloride (\(HCl\)), Sulfuric Acid (\(H_2SO_4\)), Sodium Chloride (\(NaCl\)), Magnesium Oxide (\(MgO\)), Calcium Carbonate (\(CaCO_3\)), Copper(II) Sulfate (\(CuSO_4\)), Nitric Acid (\(HNO_3\)), Sodium Hydroxide (\(NaOH\)), Potassium Hydroxide (\(KOH\)). Know common ion charges (e.g., \(SO_4^{2-}\), \(NO_3^-\), \(CO_3^{2-}\), \(OH^-\), \(NH_4^+\)).</li>
+            </ul>
+             <div class="definition">
+                <i class="fas fa-microscope"></i> <strong>Molecular Formula:</strong> Shows the actual number and type of atoms present in one molecule of a <span class="tooltip">covalent compound<span class="tooltiptext">Compound formed by sharing electrons, usually between non-metals.</span></span>. E.g., Glucose \(C_6H_{12}O_6\); Ethene \(C_2H_4\).
+            </div>
+
+            <div class="syllabus-point">
+                <span class="core">3: Deduce the formula of a simple compound from the relative numbers of atoms present in a model or a diagrammatic representation</span><br>
+                 <span class="supplement-tag">6: Deduce the formula of an ionic compound from the relative numbers of the ions present in a model or a diagrammatic representation or from the charges on the ions</span>
+            </div>
+             <p>Determine formulae by counting atoms/ions in diagrams or by balancing charges for ionic compounds.</p>
+            <div class="example">
+                <h4><i class="fas fa-cubes"></i> Example (Model)</h4> If a diagram shows 2 'A' atoms bonded to 6 'B' atoms, the formula is A<sub>2</sub>B<sub>6</sub>.
+            </div>
+             <div class="example">
+                 <h4><i class="fas fa-magnet"></i> Example (Ionic Charges)</h4> To find the formula for Aluminium Oxide: Aluminium ion is Al<sup>3+</sup>, Oxide ion is O<sup>2-</sup>. To balance charges, we need 2 x (+3) = +6 and 3 x (-2) = -6. Therefore, the formula is Al<sub>2</sub>O<sub>3</sub>.
+             </div>
+             <div class="interactive-section">
+                 <h4><i class="fas fa-project-diagram"></i> Interactive: Ionic Formula Builder</h4>
+                 <p>Select ions to build the formula (charges must balance).</p>
+                 <div class="ion-selector controls">
+                     <label for="cation">Cation (+):</label>
+                     <select id="cation" aria-label="Select Cation">
+                         <option value="1" data-symbol="Na">Na⁺</option> <option value="1" data-symbol="K">K⁺</option> <option value="1" data-symbol="Ag">Ag⁺</option> <option value="1" data-symbol="H">H⁺</option> <option value="1" data-symbol="NH4">NH₄⁺</option> <option value="2" data-symbol="Mg">Mg²⁺</option> <option value="2" data-symbol="Ca">Ca²⁺</option> <option value="2" data-symbol="Zn">Zn²⁺</option> <option value="2" data-symbol="Cu">Cu²⁺</option> <option value="2" data-symbol="Fe">Fe²⁺</option> <option value="3" data-symbol="Al">Al³⁺</option> <option value="3" data-symbol="Fe">Fe³⁺</option>
+                     </select>
+                     <label for="anion">Anion (-):</label>
+                     <select id="anion" aria-label="Select Anion">
+                         <option value="-1" data-symbol="Cl">Cl⁻</option> <option value="-1" data-symbol="Br">Br⁻</option> <option value="-1" data-symbol="I">I⁻</option> <option value="-1" data-symbol="OH">OH⁻</option> <option value="-1" data-symbol="NO3">NO₃⁻</option> <option value="-1" data-symbol="HCO3">HCO₃⁻</option> <option value="-2" data-symbol="O">O²⁻</option> <option value="-2" data-symbol="S">S²⁻</option> <option value="-2" data-symbol="SO4">SO₄²⁻</option> <option value="-2" data-symbol="CO3">CO₃²⁻</option> <option value="-3" data-symbol="PO4">PO₄³⁻</option> <option value="-3" data-symbol="N">N³⁻</option>
+                     </select>
+                     <button onclick="buildIonicFormula()" aria-label="Build Ionic Formula"><i class="fas fa-cogs"></i> Build</button>
+                 </div>
+                 <div class="output" id="ionicFormulaOutput">Select ions and click 'Build'.</div>
+             </div>
+
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">5: Define the empirical formula of a compound as the simplest whole number ratio of the different atoms or ions in a compound</span>
+                 <div class="definition">
+                    <i class="fas fa-sort-numeric-down"></i> <strong>Empirical Formula:</strong> The simplest whole-number ratio of atoms of each element present in a compound.
+                    <ul><li>E.g., Glucose (Molecular Formula \(C_6H_{12}O_6\)). Divide subscripts by 6 → Empirical Formula \(CH_2O\).</li><li>E.g., Ethene (Molecular Formula \(C_2H_4\)). Divide subscripts by 2 → Empirical Formula \(CH_2\).</li><li>For ionic compounds (like NaCl, MgO, Al₂O₃), the formula unit usually represents the empirical formula already.</li></ul>
+                </div>
+            </div>
+
+             <div class="syllabus-point">
+                <span class="core">4: Construct word equations and symbol equations (including state symbols) to show how reactants form products</span><br>
+                <span class="supplement-tag">7: Construct symbol equations with state symbols, including ionic equations</span><br>
+                <span class="supplement-tag">8: Deduce the symbol equation for a reaction, given relevant information</span>
+            </div>
+             <p>Chemical equations represent chemical reactions.</p>
+             <ul>
+                 <li><strong>Word Equations:</strong> Use names of reactants and products. E.g., Magnesium + Hydrochloric acid → Magnesium chloride + Hydrogen</li>
+                 <li><strong>Symbol Equations:</strong> Use chemical formulae. Must be balanced (same number of each type of atom on both sides). E.g., \(Mg + 2HCl \rightarrow MgCl_2 + H_2\)</li>
+                 <li><strong>State Symbols:</strong> Indicate the physical state: (s) solid, (l) liquid, (g) gas, (aq) aqueous (dissolved in water). E.g., \(Mg(s) + 2HCl(aq) \rightarrow MgCl_2(aq) + H_2(g)\)</li>
+                 <li class="supplement-section"><strong>Ionic Equations (Supplement):</strong> Show only the species that actually change during the reaction in aqueous solution. <span class="tooltip">Spectator ions<span class="tooltiptext">Ions present but unchanged on both sides of the equation.</span></span> are omitted.
+                     <div class="example"> Precipitation Reaction: \(AgNO_3(aq) + NaCl(aq) \rightarrow AgCl(s) + NaNO_3(aq)\) <br> Full ionic: \(Ag^+(aq) + NO_3^-(aq) + Na^+(aq) + Cl^-(aq) \rightarrow AgCl(s) + Na^+(aq) + NO_3^-(aq)\) <br> Net ionic (Na⁺ and NO₃⁻ are spectators): \(Ag^+(aq) + Cl^-(aq) \rightarrow AgCl(s)\) </div>
+                     <div class="example"> Acid-Base Reaction: \(HCl(aq) + NaOH(aq) \rightarrow NaCl(aq) + H_2O(l)\) <br> Full ionic: \(H^+(aq) + Cl^-(aq) + Na^+(aq) + OH^-(aq) \rightarrow Na^+(aq) + Cl^-(aq) + H_2O(l)\) <br> Net ionic (Na⁺ and Cl⁻ are spectators): \(H^+(aq) + OH^-(aq) \rightarrow H_2O(l)\) </div>
+                  </li>
+                 <li><strong>Deducing Equations:</strong> Use knowledge of reactants/products and balancing rules.</li>
+             </ul>
+             <div class="interactive-section">
+                  <h4><i class="fas fa-balance-scale-right"></i> Equation Balancer (Check)</h4>
+                  <p>Check if the combustion of methane (\(CH_4 + O_2 \rightarrow CO_2 + H_2O\)) is balanced.</p>
+                  <div class="equation-balancer controls">
+                     <input type="number" id="coeffCH4" min="1" value="1" aria-label="Coefficient for CH4"> \(CH_4(g)\) +
+                     <input type="number" id="coeffO2_comb" min="1" value="1" aria-label="Coefficient for O2"> \(O_2(g)\)  →
+                     <input type="number" id="coeffCO2" min="1" value="1" aria-label="Coefficient for CO2"> \(CO_2(g)\) +
+                     <input type="number" id="coeffH2O_comb" min="1" value="1" aria-label="Coefficient for H2O"> \(H_2O(l)\)
+                      <button onclick="checkBalanceCombustion()" aria-label="Check Balance"><i class="fas fa-check"></i> Check</button>
+                  </div>
+                  <div class="output" id="balanceOutputCombustion">Enter coefficients (e.g., 1, 2, 1, 2) and click 'Check'.</div>
+             </div>
+        </section>
+
+        <section id="section-3-2">
+             <h2><i class="fas fa-weight-hanging"></i> 3.2 Relative masses of atoms and molecules</h2>
+            <div class="syllabus-point">
+                <span class="core">1: Describe relative atomic mass, \(A_r\), as the average mass of the isotopes of an element relative to 1/12th of the mass of an atom of \(^{12}\text{C}\)</span>
+                <div class="definition">
+                     <i class="fas fa-atom"></i> <strong>Relative Atomic Mass (\(A_r\)):</strong> The weighted average mass of the naturally occurring isotopes of an element on a scale where an atom of Carbon-12 (\(^{12}\text{C}\)) has a mass of exactly 12 units. It has no units itself. Found on the Periodic Table. E.g., \(A_r(Cl) = 35.5\), \(A_r(Na) = 23.0\).
+                 </div>
+            </div>
+
+              <div class="syllabus-point">
+                 <span class="core">2: Define relative molecular mass, \(M_r\), as the sum of the relative atomic masses. Relative formula mass, \(M_r\), will be used for ionic compounds</span>
+                 <div class="definition">
+                     <i class="fas fa-cubes"></i> <strong>Relative Molecular Mass (\(M_r\)):</strong> The sum of the relative atomic masses (\(A_r\)) of all the atoms present in the formula of one molecule of a substance (used for covalent compounds).
+                     <br>
+                     <i class="fas fa-magnet"></i> <strong>Relative Formula Mass (\(M_r\)):</strong> The sum of the relative atomic masses (\(A_r\)) of all the atoms/ions present in the formula unit of a substance (used generally, especially for ionic compounds which don't form discrete molecules).
+                     <p><strong>Calculation:</strong> For any formula, \(M_r\) is calculated by summing the \(A_r\) values of all constituent atoms according to the formula. E.g., \(M_r(H_2SO_4) = (2 \times A_r(H)) + A_r(S) + (4 \times A_r(O))\). It has no units.</p>
+                 </div>
+              </div>
+              <div class="interactive-section">
+                  <h4><i class="fas fa-calculator"></i> M<sub>r</sub> Calculator</h4>
+                  <p>Enter chemical formula (case sensitive, e.g., H2O, CO2, Mg(OH)2, CuSO4). <span class="tooltip">Uses standard Ar values<span class="tooltiptext">E.g., H=1.0, C=12.0, O=16.0, Na=23.0, Mg=24.3, S=32.1, Cl=35.5, Ca=40.1, Fe=55.8, Cu=63.5 etc. defined in common.js</span></span></p>
+                  <div class="controls">
+                      <input type="text" id="mrFormulaInput" placeholder="e.g., H2SO4" aria-label="Chemical Formula for Mr calculation" style="min-width: 150px;">
+                      <button onclick="calculateMr()" aria-label="Calculate Mr"><i class="fas fa-calculator"></i> Calculate M<sub>r</sub></button>
+                  </div>
+                  <div class="output" id="mrOutput">Enter formula and click 'Calculate M<sub>r</sub>'.</div>
+              </div>
+
+              <div class="syllabus-point">
+                 <span class="core">3: Calculate reacting masses in simple proportions. Calculations will not involve the mole concept</span>
+                  <p>Core level calculations use the ratio of \(M_r\) values from the balanced equation to determine reacting masses, without explicitly using moles.</p>
+                  <div class="alert alert-warning"> <i class="fas fa-exclamation-triangle"></i> <strong>Core Level Method (Ratio Method):</strong> Focuses on the mass relationship implied by the balanced equation's formula masses. </div>
+                  <div class="example">
+                      <h4><i class="fas fa-balance-scale"></i> Example: Reacting Mass (Ratio Method)</h4>
+                      <p><strong>Q:</strong> What mass of iron(III) oxide (\(Fe_2O_3\)) is produced when 11.2 g of iron reacts with excess oxygen? (\(A_r\): Fe=56, O=16)</p>
+                      <p>1. Balanced Eq: \(4Fe(s) + 3O_2(g) \rightarrow 2Fe_2O_3(s)\)</p>
+                      <p>2. Relative Masses from Eq: \(4 \times A_r(Fe) = 4 \times 56 = 224\). \(2 \times M_r(Fe_2O_3) = 2 \times ((2 \times 56) + (3 \times 16)) = 2 \times (112 + 48) = 2 \times 160 = 320\).</p>
+                      <p>3. Mass Ratio: 224 mass units of Fe produce 320 mass units of Fe₂O₃.</p>
+                      <p>4. Calculation: \(\frac{\text{mass } Fe_2O_3}{11.2 \, g \, Fe} = \frac{320}{224}\) <br> \(\implies \text{Mass } Fe_2O_3 = 11.2 \times \frac{320}{224} = 11.2 \times 1.428... = 16.0 \, g\).</p>
+                  </div>
+              </div>
+        </section>
+
+        <section id="section-3-3">
+             <h2><i class="fas fa-flask"></i> 3.3 The mole and the Avogadro constant</h2>
+             <div class="syllabus-point">
+                 <span class="core">1: State that concentration can be measured in \(g/dm^3\) or \(mol/dm^3\)</span>
+                 <div class="definition">
+                     <i class="fas fa-vial"></i> <strong>Concentration:</strong> The amount of solute dissolved in a given volume of solvent (usually water, forming a solution).
+                     <ul><li>Units: Grams per cubic decimetre (\(g/dm^3\)) or Moles per cubic decimetre (\(mol/dm^3\)).</li><li>Note: \(mol/dm^3\) is also called Molarity (M). 1 dm³ = 1 Litre = 1000 cm³.</li></ul>
+                 </div>
+            </div>
+
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">2: State that the mole, mol, is the unit of amount of substance and that one mole contains \(6.02 \times 10^{23}\) particles, e.g. atoms, ions, molecules; this number is the Avogadro constant</span>
+                <div class="definition"> <i class="fas fa-boxes-stacked"></i> <strong>The Mole (symbol: mol):</strong> The SI unit for the 'amount of substance'. It represents a specific number of particles. </div>
+                <div class="definition"> <i class="fas fa-infinity"></i> <strong>Avogadro Constant (\(L\) or \(N_A\)):</strong> The number of specified particles (atoms, molecules, ions, electrons, etc.) in one mole of a substance. \( L \approx 6.02 \times 10^{23} \, particles/mol \). </div>
+                <p>One mole of any substance contains the Avogadro number of particles.</p>
+            </div>
+
+              <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">3: Use the relationship amount of substance (mol) = mass (g) / molar mass (g/mol) to calculate: (a) amount of substance (b) mass (c) molar mass (d) relative atomic mass or relative molecular / formula mass (e) number of particles, using the value of the Avogadro constant</span>
+                 <div class="definition"> <i class="fas fa-scale-balanced"></i> <strong>Molar Mass (M):</strong> The mass in grams of one mole of a substance (units: g/mol). Numerically, it is equal to the relative atomic mass (\(A_r\)) for elements or the relative formula/molecular mass (\(M_r\)) for compounds. E.g., M(H₂O) = 18.0 g/mol, M(Na) = 23.0 g/mol. </div>
+                 <div class="alert alert-info tex2jax_process"> Key Formulae Triangle:
+                  <div style="text-align: center; font-size: 1.2em; line-height: 1.4;">
+                     <div>Mass (m)</div>
+                     <hr style="width:100px; margin: 2px auto; border-top: 2px solid black;">
+                     <div>Moles (n) | Molar Mass (M)</div>
+                  </div>
+                  \[ n = \frac{m}{M} \quad \iff \quad m = n \times M \quad \iff \quad M = \frac{m}{n} \]
+                  \[ \text{Number of Particles} = \text{Amount (n, in mol)} \times \text{Avogadro Constant (L)} \]
+                 </div>
+                 <div class="interactive-section">
+                     <h4><i class="fas fa-exchange-alt"></i> Mole - Mass - Particles Calculator</h4>
+                     <div class="controls">
+                         <label for="massInput">Mass (g):</label> <input type="number" id="massInput" placeholder="e.g., 36.0" step="any" aria-label="Mass in grams">
+                         <label for="molarMassInput">Molar Mass (g/mol):</label> <input type="number" id="molarMassInput" placeholder="e.g., 18.0" step="any" aria-label="Molar Mass in g/mol">
+                         <label for="molesInput">Amount (mol):</label> <input type="number" id="molesInput" placeholder="e.g., 2.00" step="any" aria-label="Amount in moles">
+                     </div>
+                      <div class="controls">
+                          <button onclick="calculateMolesMass()" aria-label="Calculate Missing Mass/Moles/Molar Mass"><i class="fas fa-calculator"></i> Calc Missing (m/M/n)</button>
+                          <button onclick="calculateParticles()" aria-label="Calculate Particles from Moles"><i class="fas fa-atom"></i> Calc Particles (from mol)</button>
+                          <button onclick="resetCalc()" aria-label="Reset Calculator"><i class="fas fa-undo"></i> Reset</button>
+                      </div>
+                      <div class="output" id="molesMassOutput">Enter two known values to calculate the third.</div>
+                      <div class="output" id="particlesOutput">Enter moles and click 'Calc Particles'.</div>
+                 </div>
+              </div>
+
+              <div class="supplement-section syllabus-point">
+                  <span class="supplement-tag">4: Use the molar gas volume, taken as 24 dm³ at room temperature and pressure, r.t.p., in calculations involving gases</span>
+                   <div class="definition"> <i class="fas fa-wind"></i> <strong>Molar Gas Volume (at r.t.p.):</strong> One mole of any gas occupies a volume of approximately 24 cubic decimetres (24 dm³ or 24,000 cm³) at room temperature (approx 20-25°C) and pressure (approx 1 atm). </div>
+                   <div class="alert alert-info tex2jax_process"> Key Formulae Triangle (Gas Volume):
+                       <div style="text-align: center; font-size: 1.2em; line-height: 1.4;">
+                         <div>Volume (V, dm³)</div>
+                         <hr style="width:150px; margin: 2px auto; border-top: 2px solid black;">
+                         <div>Moles (n) | Molar Volume (24)</div>
+                       </div>
+                       \[ n = \frac{V_{\text{gas}} (\text{in } dm^3)}{24 \, dm^3/mol} \quad \iff \quad V_{\text{gas}} (\text{in } dm^3) = n \times 24 \, dm^3/mol \]
+                       (Remember: To convert cm³ to dm³, divide by 1000).
+                   </div>
+                   <div class="interactive-section">
+                        <h4><i class="fas fa-lungs"></i> Gas Volume (r.t.p.) Calculator</h4>
+                        <div class="controls">
+                            <label for="gasVolumeInput">Volume (dm³):</label> <input type="number" id="gasVolumeInput" placeholder="e.g., 48" step="any" aria-label="Gas Volume in dm³">
+                            <label for="gasMolesInput">Amount (mol):</label> <input type="number" id="gasMolesInput" placeholder="e.g., 2.0" step="any" aria-label="Amount of gas in moles">
+                        </div>
+                        <div class="controls">
+                             <button onclick="calculateGas()" aria-label="Calculate Missing Gas Volume/Moles"><i class="fas fa-calculator"></i> Calculate Missing</button>
+                             <button onclick="resetGasCalc()" aria-label="Reset Gas Calculator"><i class="fas fa-undo"></i> Reset</button>
+                         </div>
+                         <div class="output" id="gasOutput">Enter one value and click 'Calculate Missing'.</div>
+                   </div>
+              </div>
+
+             <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">5: Calculate stoichiometric reacting masses, limiting reactants, volumes of gases at r.t.p., volumes of solutions and concentrations of solutions expressed in g/dm³ and mol/dm³, including conversion between cm³ and dm³</span>
+
+                 <h4>General Stoichiometric Calculation Strategy (Using Moles)</h4>
+                 <p>This is the fundamental method for Supplement calculations:</p>
+                 <ol>
+                     <li>Write the balanced chemical equation for the reaction.</li>
+                     <li>Identify the known quantity (mass, gas vol, solution vol/conc) of one substance (A).</li>
+                     <li>Convert the known quantity of substance A into <strong>moles</strong> using the relevant formula (\(n=m/M\), \(n=V_{gas}/24\), \(n=C \times V_{soln}\)).</li>
+                     <li>Use the mole ratio from the balanced equation to determine the moles of the desired substance (B). (Ratio = coefficient of B / coefficient of A).</li>
+                     <li>Convert the moles of substance B back into the required quantity (mass, gas vol, concentration, etc.) using the relevant formula.</li>
+                 </ol>
+
+                 <h4>Concentration Calculations Revisited</h4>
+                  <div class="alert alert-info tex2jax_process">
+                      <p>Relationship between \(mol/dm^3\) and \(g/dm^3\):</p>
+                     \[ \text{Concentration (g/dm³)} = \text{Concentration (mol/dm³)} \times \text{Molar Mass (M, g/mol)} \]
+                     \[ \text{Concentration (mol/dm³)} = \frac{\text{Concentration (g/dm³)}}{\text{Molar Mass (M, g/mol)}} \]
+                     <p>Remember the core concentration formula:</p>
+                     \[ \text{Moles (n)} = \text{Concentration (C, mol/dm³)} \times \text{Volume (V, in dm³)} \quad \implies n = C \times V_{dm³} \]
+                 </div>
+
+                  <div class="interactive-section">
+                      <h4><i class="fas fa-flask-vial"></i> Solution Concentration Calculator (Extended)</h4>
+                      <div class="controls">
+                          <label for="concMolesInput_ext">Amount (mol):</label> <input type="number" id="concMolesInput_ext" placeholder="e.g., 0.50" step="any" aria-label="Amount of solute in moles">
+                          <label for="concVolumeInput_ext">Volume (dm³):</label> <input type="number" id="concVolumeInput_ext" placeholder="e.g., 0.250" step="any" aria-label="Volume of solution in dm³">
+                          <label for="concMolDm3Input_ext">Conc (mol/dm³):</label> <input type="number" id="concMolDm3Input_ext" placeholder="e.g., 2.0" step="any" aria-label="Concentration in mol/dm³">
+                          <label for="concGDm3Input">Conc (g/dm³):</label> <input type="number" id="concGDm3Input" placeholder="e.g., 80.0" step="any" aria-label="Concentration in g/dm³">
+                          <label for="concMolarMassInput">Molar Mass (g/mol):</label> <input type="number" id="concMolarMassInput" placeholder="e.g., 40.0" step="any" aria-label="Molar Mass for concentration conversion">
+                      </div>
+                       <div class="controls">
+                           <button onclick="calculateConcentrationExtended()" aria-label="Calculate Missing Concentration/Moles/Volume/MassConc"><i class="fas fa-calculator"></i> Calculate Missing</button>
+                           <button onclick="resetConcCalcExtended()" aria-label="Reset Extended Concentration Calculator"><i class="fas fa-undo"></i> Reset</button>
+                       </div>
+                       <div class="output" id="concOutputExtended">Enter sufficient known values and click 'Calculate Missing'.</div>
+                 </div>
+
+                 <h4>Limiting Reactants</h4>
+                  <div class="definition">
+                     <i class="fas fa-filter-circle-xmark"></i> <strong>Limiting Reactant (or Limiting Reagent):</strong> The reactant that is completely consumed first in a chemical reaction. It determines the maximum amount of product that can be formed (the theoretical yield). Any other reactants present in amounts greater than needed are said to be in <span class="tooltip">excess<span class="tooltiptext">More than enough reactant present; some will be left unreacted at the end.</span></span>.
+                 </div>
+                 <p>How to find the limiting reactant:</p>
+                 <ol>
+                     <li>Calculate the moles of each reactant provided using the given masses, volumes, or concentrations.</li>
+                     <li>Divide the moles of each reactant by its stoichiometric coefficient from the balanced chemical equation.</li>
+                     <li>The reactant that yields the *smallest* result from this division is the limiting reactant.</li>
+                     <li>Use the initial moles of the *limiting reactant* to calculate the theoretical yield of products based on the mole ratios in the balanced equation.</li>
+                 </ol>
+                  <div class="example">
+                      <h4><i class="fas fa-lightbulb"></i> Example: Identifying Limiting Reactant</h4>
+                      <p>Reaction: \(N_2(g) + 3H_2(g) \rightarrow 2NH_3(g)\). Suppose 56 g of \(N_2\) reacts with 10 g of \(H_2\). Which is limiting? (\(A_r\): N=14, H=1)</p>
+                      <p>1. Moles: \(M(N_2) = 28\) g/mol, \(M(H_2) = 2\) g/mol. <br> \(n(N_2) = 56 \, g / 28 \, g/mol = 2.0 \, mol\). <br> \(n(H_2) = 10 \, g / 2 \, g/mol = 5.0 \, mol\).</p>
+                      <p>2. Divide by coefficient: For \(N_2\): \(2.0 \, mol / 1 = 2.0\). For \(H_2\): \(5.0 \, mol / 3 \approx 1.67\).</p>
+                      <p>3. Smallest result: \(H_2\) (1.67) gives the smaller value, so \(H_2\) is the limiting reactant.</p>
+                      <p>4. Max Yield (based on limiting \(H_2\)): The calculation for the amount of \(NH_3\) produced must start from the 5.0 mol of \(H_2\). Ratio \(H_2:NH_3\) is 3:2. Max moles \(NH_3 = 5.0 \, mol \, H_2 \times \frac{2 \, mol \, NH_3}{3 \, mol \, H_2} \approx 3.33 \, mol \, NH_3\).</p>
+                  </div>
+             </div>
+
+              <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">6: Use experimental data from a titration to calculate the moles of solute, or the concentration or volume of a solution</span>
+                 <p><i class="fas fa-prescription-bottle" style="color: var(--primary-color);"></i> A <strong>titration</strong> is a quantitative chemical analysis method used to determine the concentration of an unknown solution (analyte) by reacting it with a solution of known concentration (standard solution or titrant).</p>
+                 <p><strong>Titration Calculation Steps:</strong></p>
+                 <ol>
+                     <li>Write the balanced chemical equation for the reaction occurring between the analyte and the titrant.</li>
+                     <li>Identify the known information: typically the concentration (\(C_1\)) and volume (\(V_1\)) of the standard solution used (titrant volume from the burette reading), and the volume (\(V_2\)) of the unknown solution pipetted (analyte). Ensure all volumes are converted to dm³.</li>
+                     <li>Calculate the moles of the known standard solution used: \(n_1 = C_1 \times V_1\).</li>
+                     <li>Use the mole ratio from the balanced equation to find the moles of the unknown substance (\(n_2\)) that reacted completely with \(n_1\). (Mole ratio = coefficient of unknown / coefficient of known).</li>
+                     <li>Calculate the unknown concentration (\(C_2 = n_2 / V_2\)) or volume (\(V_2 = n_2 / C_2\)) or moles (\(n_2\)) as required by the question.</li>
+                 </ol>
+                 <div class="example">
+                      <h4><i class="fas fa-calculator"></i> Example: Titration Calculation (Acid-Base)</h4>
+                      <p>In a titration, 25.0 cm³ (0.0250 dm³) of sodium hydroxide (NaOH) solution required an average volume of 22.50 cm³ (0.02250 dm³) of 0.100 mol/dm³ hydrochloric acid (HCl) for complete neutralisation using phenolphthalein indicator. Calculate the concentration of the NaOH solution in mol/dm³.</p>
+                      <p>1. Balanced Eq: \(NaOH(aq) + HCl(aq) \rightarrow NaCl(aq) + H_2O(l)\)</p>
+                      <p>2. Knowns: \(V(NaOH) = 0.0250 \, dm^3\), \(V(HCl) = 0.02250 \, dm^3\), \(C(HCl) = 0.100 \, mol/dm^3\). Unknown: \(C(NaOH)\).</p>
+                      <p>3. Moles HCl used: \(n(HCl) = C(HCl) \times V(HCl) = 0.100 \, mol/dm^3 \times 0.02250 \, dm^3 = 0.00225 \, mol\).</p>
+                      <p>4. Mole ratio NaOH:HCl from equation is 1:1. Therefore, moles of NaOH reacted = moles of HCl used = \(n(NaOH) = 0.00225 \, mol\).</p>
+                      <p>5. Conc. NaOH: \(C(NaOH) = \frac{n(NaOH)}{V(NaOH)} = \frac{0.00225 \, mol}{0.0250 \, dm^3} = \mathbf{0.0900 \, mol/dm³}\).</p>
+                 </div>
+             </div>
+
+             <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">7: Calculate empirical formulae and molecular formulae, given appropriate data</span>
+                 <h4>Calculating Empirical Formula (Recap & Detail)</h4>
+                 <p>Given % composition or mass composition data:</p>
+                 <ol>
+                     <li><strong>List Elements & Data:</strong> Write down the elements involved and their corresponding mass (if given directly) or percentage composition (treat % as mass in a 100g sample).</li>
+                     <li><strong>Convert Mass to Moles:</strong> For each element, calculate the amount in moles using its relative atomic mass (\(A_r\)): \(n = \frac{\text{mass}}{\text{Ar}}\).</li>
+                     <li><strong>Find Simplest Mole Ratio:</strong> Divide the mole value for each element by the smallest mole value calculated in the previous step.</li>
+                     <li><strong>Obtain Whole Number Ratio:</strong> If the results from step 3 are very close to whole numbers (e.g., 1.0, 2.01, 2.98), round them to the nearest whole number. If the results are close to common fractions (e.g., 1.5, 2.33, 2.67), multiply *all* the ratios by the smallest integer (usually 2, 3, or 4) that converts them all to whole numbers.</li>
+                     <li><strong>Write Empirical Formula:</strong> Use the whole numbers obtained as subscripts for the respective elements in the formula.</li>
+                 </ol>
+                  <div class="interactive-section">
+                      <h4><i class="fas fa-percentage"></i> Empirical Formula Calculator</h4>
+                      <p>Enter % or mass for up to 3 elements. Ensure symbols match common elements.</p>
+                      <div id="empirical-elements" class="controls" style="flex-direction: column; align-items: flex-start;">
+                          <div>
+                              <label for="el1_symbol">E1:</label>
+                              <input type="text" placeholder="Symbol" id="el1_symbol" aria-label="Element 1 Symbol" size="3">
+                              <label for="el1_ar">Ar:</label>
+                              <input type="number" placeholder="Ar" id="el1_ar" step="any" aria-label="Element 1 Ar (optional)" style="width: 60px;">
+                              <label for="el1_comp">Comp:</label>
+                              <input type="number" placeholder="% or mass" id="el1_comp" step="any" aria-label="Element 1 Composition" style="width: 80px;">
+                          </div>
+                           <div>
+                               <label for="el2_symbol">E2:</label>
+                               <input type="text" placeholder="Symbol" id="el2_symbol" aria-label="Element 2 Symbol" size="3">
+                               <label for="el2_ar">Ar:</label>
+                               <input type="number" placeholder="Ar" id="el2_ar" step="any" aria-label="Element 2 Ar (optional)" style="width: 60px;">
+                               <label for="el2_comp">Comp:</label>
+                               <input type="number" placeholder="% or mass" id="el2_comp" step="any" aria-label="Element 2 Composition" style="width: 80px;">
+                          </div>
+                           <div>
+                               <label for="el3_symbol">E3:</label>
+                               <input type="text" placeholder="Symbol" id="el3_symbol" aria-label="Element 3 Symbol (optional)" size="3">
+                               <label for="el3_ar">Ar:</label>
+                               <input type="number" placeholder="Ar" id="el3_ar" step="any" aria-label="Element 3 Ar (optional)" style="width: 60px;">
+                               <label for="el3_comp">Comp:</label>
+                               <input type="number" placeholder="% or mass" id="el3_comp" step="any" aria-label="Element 3 Composition (optional)" style="width: 80px;">
+                          </div>
+                      </div>
+                      <button onclick="calculateEmpiricalFormula()" aria-label="Calculate Empirical Formula"><i class="fas fa-calculator"></i> Calculate EF</button>
+                      <div class="output" id="empiricalOutput">Enter composition data and click calculate. Ar values will be used from common data if left blank or invalid.</div>
+                  </div>
+
+                 <h4>Calculating Molecular Formula</h4>
+                 <p>Requires the Empirical Formula and the Relative Molecular Mass (\(M_r\)) of the compound.</p>
+                 <ol>
+                     <li>Determine the Empirical Formula (EF) as described above.</li>
+                     <li>Calculate the Relative Formula Mass of the Empirical Formula (EFM).</li>
+                     <li>Find the ratio \(n = \frac{M_r(\text{Molecular Formula})}{M_r(\text{Empirical Formula})} = \frac{M_r}{EFM}\). This ratio (\(n\)) should be a whole number.</li>
+                     <li>The Molecular Formula is obtained by multiplying the subscripts in the Empirical Formula by this whole number \(n\). Molecular Formula = (EF)\(_n\).</li>
+                 </ol>
+                 <div class="example">
+                     <h4><i class="fas fa-search"></i> Example: Molecular Formula from EF and Mr</h4>
+                     <p>A compound has an empirical formula of \(CH_2\) and a relative molecular mass (\(M_r\)) of 56. Find its molecular formula. (\(A_r\): C=12, H=1)</p>
+                     <p>1. EF = \(CH_2\)</p>
+                     <p>2. EFM = \(A_r(C) + (2 \times A_r(H)) = 12 + (2 \times 1) = 14\)</p>
+                     <p>3. Ratio \(n = \frac{M_r}{EFM} = \frac{56}{14} = 4\)</p>
+                     <p>4. Molecular Formula = \((CH_2)_4 = \mathbf{C_4H_8}\) (This could be butene or cyclobutane).</p>
+                 </div>
+             </div>
+
+              <div class="supplement-section syllabus-point">
+                  <span class="supplement-tag">8: Calculate percentage yield, percentage composition by mass and percentage purity, given appropriate data</span>
+                  <h4>Percentage Yield</h4>
+                   <div class="definition">
+                     <i class="fas fa-flask"></i> <strong>Theoretical Yield:</strong> The maximum mass of product that *could* be formed from a given amount of limiting reactant, calculated using stoichiometry.
+                     <br>
+                     <i class="fas fa-weight-scale"></i> <strong>Actual Yield:</strong> The mass of product *actually* obtained when the reaction is carried out in practice (experimentally). Actual yield is often less than theoretical due to incomplete reactions, side reactions, or loss during separation/purification.
+                 </div>
+                  <div class="alert alert-info tex2jax_process"> Formula: \[ \text{% Yield} = \frac{\text{Actual Yield}}{\text{Theoretical Yield}} \times 100\% \] </div>
+                 <div class="interactive-section">
+                      <h4><i class="fas fa-chart-pie"></i> Percentage Yield Calculator</h4>
+                      <div class="controls">
+                           <label for="actualYield">Actual Yield (g):</label> <input type="number" id="actualYield" placeholder="e.g., 8.5" step="any" aria-label="Actual Yield in grams">
+                           <label for="theoreticalYield">Theoretical Yield (g):</label> <input type="number" id="theoreticalYield" placeholder="e.g., 10.0" step="any" aria-label="Theoretical Yield in grams">
+                      </div>
+                       <button onclick="calculatePercentageYield()" aria-label="Calculate Percentage Yield"><i class="fas fa-calculator"></i> Calculate % Yield</button>
+                       <div class="output" id="yieldOutput">Enter yields and click calculate.</div>
+                 </div>
+
+                  <h4>Percentage Composition by Mass</h4>
+                  <p>The percentage by mass contributed by each element in a compound.</p>
+                  <div class="alert alert-info tex2jax_process"> Formula for an element 'X' in a compound: \[ \% \text{ Composition of X} = \frac{(\text{Number of atoms of X in formula}) \times A_r(\text{X})}{M_r(\text{compound})} \times 100\% \] </div>
+                 <div class="example">
+                     <h4><i class="fas fa-percentage"></i> Example: % Composition of Carbon in Ethane (\(C_2H_6\))</h4>
+                     <p>\(A_r\): C=12.0, H=1.0</p>
+                     <p>\(M_r(C_2H_6) = (2 \times 12.0) + (6 \times 1.0) = 24.0 + 6.0 = 30.0\)</p>
+                     <p>% C = \(\frac{(2 \times 12.0)}{30.0} \times 100\% = \frac{24.0}{30.0} \times 100\% = \mathbf{80.0\%}\)</p>
+                     <p>(Similarly, % H = \(\frac{(6 \times 1.0)}{30.0} \times 100\% = 20.0\%\))</p>
+                 </div>
+
+                 <h4>Percentage Purity</h4>
+                 <p>The proportion, by mass, of a desired chemical present in an impure sample.</p>
+                  <div class="alert alert-info tex2jax_process"> Formula: \[ \text{% Purity} = \frac{\text{Mass of pure substance in the sample}}{\text{Total mass of the impure sample}} \times 100\% \] </div>
+                 <p>Calculations often involve using the mass of the impure sample in a reaction, calculating the theoretical yield based on that mass *as if it were pure*, comparing this to the actual product obtained, and working backwards or using reaction stoichiometry with the actual product mass to find the mass of pure reactant that must have reacted.</p>
+                  <div class="interactive-section">
+                      <h4><i class="fas fa-gem"></i> Percentage Purity Calculator (Direct)</h4>
+                      <p>Calculates purity if you know the mass of pure substance within the sample.</p>
+                      <div class="controls">
+                           <label for="pureMass">Mass of Pure (g):</label> <input type="number" id="pureMass" placeholder="e.g., 9.5" step="any" aria-label="Mass of Pure Substance">
+                           <label for="impureMass">Total Mass of Sample (g):</label> <input type="number" id="impureMass" placeholder="e.g., 10.0" step="any" aria-label="Total Mass of Sample">
+                       </div>
+                       <button onclick="calculatePercentagePurity()" aria-label="Calculate Percentage Purity"><i class="fas fa-calculator"></i> Calculate % Purity</button>
+                       <div class="output" id="purityOutput">Enter masses and click calculate.</div>
+                  </div>
+              </div>
+        </section>
+
+        <section id="aiQuizSection">
+            <h3><i class="fas fa-question-circle"></i> AI Generated Quiz (Chapter 3)</h3>
+            <div id="apiKeyWarning" class="hidden alert alert-danger">
+                 <i class="fas fa-key"></i> <strong>API Key Needed:</strong> Please ensure the API key is correctly set in <code>js/common.js</code> to enable this feature.
+             </div>
+            <button id="generateQuizBtn" data-chapter-id="3">
+                <i class="fas fa-magic"></i> Generate Quiz Questions
+            </button>
+            <span id="quizLoading" class="loading-indicator hidden"> Generating... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizContainer" class="tex2jax_process"></div>
+            <button id="submitQuizBtn" class="hidden">
+                 <i class="fas fa-check"></i> Submit Answers for Marking
+            </button>
+            <span id="markingLoading" class="loading-indicator hidden"> Marking... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizFeedback" class="hidden tex2jax_process">
+                 <h4><i class="fas fa-marker"></i> AI Feedback</h4>
+                 <div id="feedbackContent"></div>
+            </div>
+        </section>
+
+        <!-- Bottom Page Navigation -->
+        <section class="page-navigation">
+            <a href="Chapter2.html" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Previous Chapter</a>
+            <a href="index.html" class="btn-nav btn-home"><i class="fas fa-home"></i> Home</a>
+            <a href="Chapter4.html" class="btn-nav btn-next">Next Chapter <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+    </div> <!-- End Container -->
+
+    <script src="js/common.js"></script>
+    <script src="js/quiz_prompts.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/chapter3.js"></script> <!-- Ensure this contains checkBalanceCombustion and calculateConcentrationExtended -->
+</body>
+</html>

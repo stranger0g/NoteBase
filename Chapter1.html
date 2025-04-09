@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IGCSE Chemistry 0620: Chapter 1 - States of Matter</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <script>
+        MathJax = {
+          tex: { inlineMath: [['\\(', '\\)']], displayMath: [['$$', '$$']], processEscapes: true },
+          svg: { fontCache: 'global' }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+
+    <div id="credits-banner">
+        <span>Developed by <strong>Raied</strong></span>
+        <a href="https://www.instagram.com/strange0g" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://github.com/stranger0g" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="mailto:superraied@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+
+    <div class="container">
+        <h1><i class="fas fa-cubes"></i> Chapter 1: States of Matter</h1>
+
+        <section id="section-1-1">
+            <h2><i class="fas fa-adjust"></i> 1.1 Solids, Liquids, and Gases</h2>
+
+            <div class="syllabus-point">
+                 <span class="core">1. State the distinguishing properties of solids, liquids, and gases</span>
+                <table>
+                     <thead><tr><th>Property</th><th>Solid</th><th>Liquid</th><th>Gas</th></tr></thead>
+                     <tbody><tr><td><b>Shape</b></td><td>Fixed shape</td><td>Takes the shape of the container</td><td>Takes the shape of the container</td></tr><tr><td><b>Volume</b></td><td>Fixed volume</td><td>Fixed volume</td><td>Variable volume (fills container)</td></tr><tr><td><b>Compressibility</b></td><td>Incompressible</td><td>Almost incompressible</td><td>Easily compressed</td></tr><tr><td><b>Flow</b></td><td>Does not flow</td><td>Flows</td><td>Flows</td></tr><tr><td><b>Density</b></td><td>High density</td><td>Moderate to high density</td><td>Very low density</td></tr></tbody>
+                </table>
+            </div>
+
+            <div class="syllabus-point">
+                <span class="core">2. Describe the structures of solids, liquids, and gases in terms of particle separation, arrangement, and motion</span>
+                <p>The kinetic particle theory describes matter as composed of particles in constant motion.</p>
+                <ul>
+                    <li><strong>Solids:</strong> Particles <b>closely packed</b> in a <b>fixed, regular arrangement</b>. Strong <b>intermolecular forces</b>. Particles <b>vibrate about fixed positions</b> (low KE).</li>
+                    <li><strong>Liquids:</strong> Particles <b>closely packed</b>, <b>randomly arranged</b>. Weaker intermolecular forces. Particles <b>slide past one another</b> (moderate KE).</li>
+                    <li><strong>Gases:</strong> Particles <b>far apart</b>, <b>random arrangement</b>. <b>Negligible intermolecular forces</b>. Particles move <b>rapidly and randomly</b> (high KE).</li>
+                </ul>
+                <div class="interactive-simulation">
+                    <h4><i class="fas fa-atom"></i> Particle Model Simulation</h4>
+                    <canvas id="statesCanvas" width="400" height="250"></canvas>
+                    <div class="controls">
+                        <button id="btnSolid" class="active">Solid</button>
+                        <button id="btnLiquid">Liquid</button>
+                        <button id="btnGas">Gas</button>
+                        <label for="tempSlider">Temp:</label>
+                        <input type="range" id="tempSlider" min="1" max="10" value="1" step="1" aria-label="Temperature Slider">
+                        <span>(Higher temp = higher KE)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="syllabus-point">
+                 <span class="core">3. Describe changes of state in terms of melting, boiling, evaporating, freezing and condensing</span>
+                <p>Transitions between phases:</p>
+                <ul>
+                    <li><b>Melting:</b> Solid → Liquid (at melting point, energy absorbed).</li>
+                    <li><b>Freezing:</b> Liquid → Solid (at freezing point, energy released).</li>
+                    <li><b>Boiling:</b> Liquid → Gas (throughout, at boiling point, energy absorbed).</li>
+                    <li><b>Evaporation:</b> Liquid → Gas (surface only, below boiling point, energy absorbed).</li>
+                    <li><b>Condensing:</b> Gas → Liquid (energy released).</li>
+                    <li><span class="tooltip"><b>Sublimation:</b><span class="tooltiptext">Direct change from solid to gas.</span></span> Solid → Gas (energy absorbed). E.g., Iodine, CO₂ (dry ice).</li>
+                    <li><span class="tooltip"><b>Deposition:</b><span class="tooltiptext">Direct change from gas to solid.</span></span> Gas → Solid (energy released). E.g., Frost formation.</li>
+                </ul>
+            </div>
+
+             <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">5. Explain changes of state in terms of kinetic particle theory, including the interpretation of heating and cooling curves</span>
+                <p>Energy input changes particle KE (temp) or PE (overcoming forces during state change).</p>
+                <ul>
+                    <li><b>Kinetic Theory:</b> Temp = average KE. State changes involve overcoming intermolecular forces (potential energy change) using <b>Latent Heat</b> (of Fusion/Vaporization).</li>
+                    <li><b>Heating Curve:</b> Shows temperature vs. time/heat added.
+                        <ul>
+                           <li><b>Sloped sections:</b> KE increases, Temp rises (single state).</li>
+                           <li><b>Flat sections (plateaus):</b> State change occurs, PE increases (overcoming forces), Temp constant (Melting/Boiling Point).</li>
+                        </ul>
+                    </li>
+                     <li><b>Cooling Curve:</b> Opposite of heating curve (slopes down, plateaus at condensing/freezing points).</li>
+                </ul>
+                 <div class="heating-curve-container">
+                     <h4><i class="fas fa-chart-line"></i> Heating Curve Interpretation</h4>
+                     <p>Hover over sections:</p>
+                    <svg id="heatingCurveSVG_main" class="heatingCurveSVG" viewBox="0 0 310 200">
+                         <line x1="50" y1="180" x2="300" y2="180" class="axis" /> <line x1="50" y1="10" x2="50" y2="180" class="axis" /> <text x="175" y="195" class="axis-label" text-anchor="middle">Time / Heat Added</text> <text x="25" y="100" class="axis-label" transform="rotate(-90 25,100)">Temperature</text>
+                         <polyline id="segment-solid_main" class="curve-segment segment-solid" points="50,170 100,150" /> <polyline id="segment-melting_main" class="curve-segment segment-melting" points="100,150 150,150" /> <polyline id="segment-liquid_main" class="curve-segment segment-liquid" points="150,150 200,80" /> <polyline id="segment-boiling_main" class="curve-segment segment-boiling" points="200,80 250,80" /> <polyline id="segment-gas_main" class="curve-segment segment-gas" points="250,80 300,40" />
+                         <text x="75" y="170" class="point-label">Solid</text> <text x="125" y="160" class="point-label">Melting</text> <text x="175" y="125" class="point-label">Liquid</text> <text x="225" y="90" class="point-label">Boiling</text> <text x="275" y="55" class="point-label">Gas</text>
+                         <line x1="45" y1="150" x2="150" y2="150" stroke="#aaa" stroke-width="0.5" stroke-dasharray="2,2"/> <text x="43" y="153" class="temp-label">M.Pt</text> <line x1="45" y1="80" x2="250" y2="80" stroke="#aaa" stroke-width="0.5" stroke-dasharray="2,2"/> <text x="43" y="83" class="temp-label">B.Pt</text>
+                    </svg>
+                    <div id="curveInfo_main" class="curveInfo output">Hover over a section of the heating curve above.</div>
+                 </div>
+            </div>
+
+            <div class="syllabus-point">
+                 <span class="core">4. Describe the effects of temperature and pressure on the volume of a gas</span>
+                <ul>
+                    <li><b>Temp Effect (const P):</b> ↑Temperature → ↑Volume. (Particles move faster, hit walls harder/more often, expand to maintain pressure).</li>
+                    <li><b>Pressure Effect (const T):</b> ↑Pressure → ↓Volume. (Particles forced closer together).</li>
+                </ul>
+            </div>
+
+            <div class="supplement-section syllabus-point">
+                 <span class="supplement-tag">6. Explain, in terms of kinetic particle theory, the effects of temperature and pressure on the volume of a gas</span>
+                 <ul>
+                     <li><b>Temp Explanation (const P):</b> ↑Temp → ↑Average KE → particles move faster/collide with walls more frequently and forcefully → Volume must increase to keep collision rate/force per unit area (Pressure) constant.</li>
+                     <li><b>Pressure Explanation (const T):</b> ↑External Pressure pushes particles closer → ↓Volume → particles collide with walls more frequently in smaller space → Internal pressure increases until it matches external pressure.</li>
+                 </ul>
+            </div>
+        </section>
+
+        <section id="section-1-2">
+            <h2><i class="fas fa-wind"></i> 1.2 Diffusion</h2>
+
+            <div class="syllabus-point">
+                <span class="core">1. Describe and explain diffusion in terms of kinetic particle theory</span>
+                <p><strong>Diffusion</strong>: Net movement of particles from region of <b>higher concentration</b> to <b>lower concentration</b> (down a concentration gradient) due to <b>random motion</b> of particles.</p>
+                <p>Explanation: Particles are in constant, random motion. Where concentration is high, more particles move away from that region than towards it, resulting in net movement to lower concentration areas until evenly mixed.</p>
+                 <div class="interactive-simulation">
+                    <h4><i class="fas fa-atom"></i> Diffusion Simulation</h4>
+                    <canvas id="diffusionCanvas" width="400" height="200"></canvas>
+                    <div class="controls">
+                        <button id="startDiffusion"><i class="fas fa-play"></i> Start/Reset</button>
+                         <input type="checkbox" id="compareMasses" style="margin-left: 20px; cursor: pointer;">
+                        <label for="compareMasses" style="cursor: pointer;">Compare Effect of Mass (Supplement)</label>
+                    </div>
+                    <div id="diffusionInfo" class="output" style="text-align: center;"></div>
+                </div>
+            </div>
+
+            <div class="supplement-section syllabus-point">
+                <span class="supplement-tag">2. Describe and explain the effect of relative molecular mass (Mr) on the rate of diffusion of gases</span>
+                 <p>Rate of diffusion depends on particle mass.</p>
+                <ul>
+                    <li>At the same temperature, all gases have the same average kinetic energy (\(KE = ½mv²\)).</li>
+                    <li>Therefore, lighter particles (<b>lower Mr / lower mass 'm'</b>) must have <b>higher average speed</b> ('v') to have the same KE.</li>
+                    <li>∴ Gases with lower Mr diffuse faster because their particles move faster on average.</li>
+                </ul>
+                 <div class="example">
+                    <h4>Example: HCl vs NH₃ Diffusion</h4>
+                    <p>Ammonia (\(NH_3\), \(M_r \approx 17\)) diffuses faster than Hydrogen Chloride (\(HCl\), \(M_r \approx 36.5\)). In the classic tube experiment, the white ring of \(NH_4Cl\) forms closer to the HCl end.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="section-1-3" class="summary-section">
+            <h2><i class="fas fa-list-alt"></i> Chapter 1 Summary</h2>
+             <h4>1. Properties & Structure</h4>
+            <table><thead><tr><th>State</th><th>Arrangement & Sep.</th><th>Motion</th><th>Forces</th><th>Shape/Vol</th><th>Compress</th></tr></thead><tbody><tr><td><b>Solid</b></td><td>Regular lattice; Close</td><td>Vibrate</td><td>Strong</td><td>Fixed/Fixed</td><td>No</td></tr><tr><td><b>Liquid</b></td><td>Irregular; Close</td><td>Slide past</td><td>Moderate</td><td>Variable/Fixed</td><td>Almost No</td></tr><tr><td><b>Gas</b></td><td>Random; Far apart</td><td>Rapid, random</td><td>Negligible</td><td>Variable/Variable</td><td>Yes</td></tr></tbody></table>
+             <h4>2. Changes of State & Kinetic Theory</h4>
+             <ul><li><b>Changes:</b> Melting (S→L), Freezing (L→S), Boiling (L→G), Evaporation (L→G), Condensation (G→L), Sublimation (S→G), Deposition (G→S).</li><li><b>Energy:</b> Heating ↑KE (Temp) or ↑PE (State Change - Latent Heat). Cooling releases energy.</li><li><b>Heating Curve:</b> Slope = ↑KE. Plateau = State Change (↑PE, const Temp at MPt/BPt).</li></ul>
+              <div class="heating-curve-container">
+                  <svg id="heatingCurveSVG_summary" class="heatingCurveSVG" viewBox="0 0 310 200"> <line x1="50" y1="180" x2="300" y2="180" class="axis" /> <line x1="50" y1="10" x2="50" y2="180" class="axis" /> <text x="175" y="195" class="axis-label" text-anchor="middle">Time / Heat Added</text> <text x="25" y="100" class="axis-label" transform="rotate(-90 25,100)">Temperature</text> <polyline id="segment-solid_summary" class="curve-segment segment-solid" points="50,170 100,150" /> <polyline id="segment-melting_summary" class="curve-segment segment-melting" points="100,150 150,150" /> <polyline id="segment-liquid_summary" class="curve-segment segment-liquid" points="150,150 200,80" /> <polyline id="segment-boiling_summary" class="curve-segment segment-boiling" points="200,80 250,80" /> <polyline id="segment-gas_summary" class="curve-segment segment-gas" points="250,80 300,40" /> <text x="75" y="170" class="point-label">Solid</text> <text x="125" y="160" class="point-label">Melting</text> <text x="175" y="125" class="point-label">Liquid</text> <text x="225" y="90" class="point-label">Boiling</text> <text x="275" y="55" class="point-label">Gas</text> <line x1="45" y1="150" x2="150" y2="150" stroke="#aaa" stroke-width="0.5" stroke-dasharray="2,2"/> <text x="43" y="153" class="temp-label">M.Pt</text> <line x1="45" y1="80" x2="250" y2="80" stroke="#aaa" stroke-width="0.5" stroke-dasharray="2,2"/> <text x="43" y="83" class="temp-label">B.Pt</text> </svg>
+                  <div id="curveInfo_summary" class="curveInfo output">Hover over a section of the heating curve above.</div>
+              </div>
+             <h4>3. Gases: Volume, Temp & Pressure</h4>
+             <ul><li><b>Temp ↑ (P const) → Vol ↑</b> (Faster particles need more space/hit harder).</li><li><b>Pressure ↑ (T const) → Vol ↓</b> (Particles forced closer).</li></ul>
+             <h4>4. Diffusion</h4>
+             <ul><li><b>Def:</b> Net movement, high → low concentration, random particle motion.</li><li><b>Rate:</b> Faster for lower Mr gases (higher speed at same KE/Temp).</li></ul>
+        </section>
+
+         <!-- REMOVED Video Section -->
+
+        <section id="aiQuizSection">
+            <h3><i class="fas fa-question-circle"></i> AI Generated Quiz (Chapter 1)</h3>
+             <div id="apiKeyWarning" class="hidden alert alert-danger">
+                 <i class="fas fa-key"></i> <strong>API Key Needed:</strong> Please ensure the API key is correctly set in <code>js/common.js</code> to enable this feature.
+             </div>
+            <button id="generateQuizBtn" data-chapter-id="1">
+                <i class="fas fa-magic"></i> Generate Quiz Questions
+            </button>
+            <span id="quizLoading" class="loading-indicator hidden"> Generating... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizContainer" class="tex2jax_process"></div>
+            <button id="submitQuizBtn" class="hidden">
+                 <i class="fas fa-check"></i> Submit Answers for Marking
+            </button>
+            <span id="markingLoading" class="loading-indicator hidden"> Marking... <i class="fas fa-spinner fa-spin"></i></span>
+            <div id="quizFeedback" class="hidden tex2jax_process">
+                 <h4><i class="fas fa-marker"></i> AI Feedback</h4>
+                 <div id="feedbackContent"></div>
+            </div>
+        </section>
+
+        <!-- Bottom Page Navigation -->
+        <section class="page-navigation nav-first-page">
+            <a href="#" class="btn-nav btn-prev"><i class="fas fa-arrow-left"></i> Previous Chapter</a> <!-- Hidden by CSS -->
+            <a href="index.html" class="btn-nav btn-home"><i class="fas fa-home"></i> Home</a>
+            <a href="Chapter2.html" class="btn-nav btn-next">Next Chapter <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+    </div> <!-- End Container -->
+
+    <script src="js/common.js"></script>
+    <script src="js/quiz_prompts.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/chapter1.js"></script>
+</body>
+</html>
