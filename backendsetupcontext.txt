@@ -1,0 +1,23 @@
+Just wanted to summarize the backend setup we implemented for the IGCSE Chemistry Notes project, specifically to handle the AI Quiz feature securely:
+Goal: Move the Google Gemini API key off the frontend (client-side JavaScript) to prevent exposure and potential misuse.
+Solution: Created a secure backend proxy using Supabase Edge Functions.
+Supabase Project: Set up a new project on Supabase to host our backend components.
+Supabase CLI: Used the Supabase CLI locally to link our project folder and manage deployments.
+Edge Function (gemini-proxy):
+Created a new serverless Edge Function named gemini-proxy within the Supabase project (supabase/functions/gemini-proxy/index.ts).
+This function acts as the intermediary between our frontend and the Google Gemini API.
+API Key Security:
+Stored the actual Gemini API Key securely as an environment variable secret within the Supabase project settings using npx supabase secrets set GEMINI_API_KEY=....
+The Edge Function code (index.ts) reads this key from the environment (Deno.env.get('GEMINI_API_KEY')) when needed. The key is no longer present in the frontend code.
+Function Logic:
+The Edge Function receives the quiz generation prompt (or marking data) from the frontend.
+It attaches the secure API key.
+It calls the Google Gemini API.
+It processes the response from Gemini (extracting and parsing the required JSON content).
+It sends the final, clean JSON result (quiz questions or feedback) back to the frontend.
+CORS Configuration:
+Set up Cross-Origin Resource Sharing (CORS) headers within the Edge Function (supabase/functions/_shared/cors.ts).
+This was configured to allow requests specifically from our GitHub Pages hosting domain ([Your GitHub Pages URL]), ensuring the browser permits the frontend to call the backend function. Initially, we might have used *, but restricted it for better security.
+Deployment: Deployed the gemini-proxy Edge Function to Supabase using npx supabase functions deploy gemini-proxy.
+Frontend Update: Modified the frontend JavaScript (common.js) to call our new Supabase Edge Function URL (https://<project-ref>.supabase.co/functions/v1/gemini-proxy) instead of calling the Google Gemini API directly.
+Outcome: The AI Quiz feature now functions by routing requests through our secure Supabase Edge Function, protecting the API key while still leveraging the Gemini service. The static site itself is hosted separately on GitHub Pages.
